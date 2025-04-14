@@ -1,0 +1,125 @@
+/* --------- Section 1-------- */
+#playlist{
+    width: 100%;
+    display: flex;
+    flex-direction: column;  
+    align-items: center; 
+    margin-top: 100px; 
+    font-family: "Josefin Sans", serif;
+    background-color: rgba(255, 255, 255, 0.18);
+    color: white;
+    height: fit-content;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#playlist h1{
+    font-size: 40pt;
+    margin-bottom: 10px;
+}
+
+#playlist h3{
+    text-align: left;
+    width: 80%;
+    font-size: 20pt;
+}
+
+#playlist_area{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    width: 1000px ;
+}
+#playlist_area div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.playlist_icon{
+    width: 150px;
+    height: 150px;
+}
+
+/* --------- Section 2-------- */
+#artist_albums{
+    width: 100%;
+    display: flex;
+    flex-direction: column;  
+    align-items: center; 
+    font-family: "Josefin Sans", serif;
+    color: white;
+}
+#artist_albums h3{
+    text-align: left;
+    width: 80%;
+    font-size: 20pt;
+
+}
+#artist_area{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    justify-content: space-between;
+    width: 80%;
+    height: fit-content;
+    padding-top: 20px;
+}
+#artist_icon{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+#artist_area a{
+    font-family: "Josefin Sans", serif;
+    font-size: 20pt;
+    color: white;
+    text-decoration: none;
+}
+
+#albums_area{
+    width: 100%;
+    display: flex;
+    flex-direction: column;  
+    align-items: center; 
+    margin-top: 100px; 
+    font-family: "Josefin Sans", serif;
+    background-color: rgba(255, 255, 255, 0.18);
+    color: white;
+    height: fit-content;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+#albums_area h3{
+    text-align: left;
+    width: 80%;
+    font-size: 20pt;
+    margin-bottom: 40px;
+}
+#albums_icons_area{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    width: 1000px;
+}
+
+#albums_icons_area div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

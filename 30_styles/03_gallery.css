@@ -1,0 +1,78 @@
+/* --------- Section 1-------- */
+#category_button{
+    width: 100%;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;  
+    align-items: center; 
+    margin-top: 100px; 
+    font-family: "Josefin Sans", serif;
+    background-color: rgba(255, 255, 255, 0.18);
+}
+#category_button h2{
+    font-family: "Josefin Sans", serif;
+    font-size: 30pt;
+    color: white; 
+    margin-bottom: 70px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+#buttons {
+    flex-wrap: wrap;
+    gap: 70px;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin-bottom: 50px;
+}  
+.Categorie{
+    width: 210px;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    background-color: #FAC94C;
+    padding: 10px 20px; 
+    font-size: 20px; 
+    cursor: pointer; 
+    transition: background-color 0.3s;
+    font-weight: bold;
+
+}
+/* --------- Section 2-------- */
+#all_artist{
+    width: 90%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;  
+    align-items: center; 
+    margin-top: 50px;
+    font-family: "Josefin Sans", serif;
+}
+#all_artist h2{
+    font-family: "Josefin Sans", serif;
+    font-size: 30pt;
+    color: white; 
+    margin-bottom: 70px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+#artist_area{
+    flex-wrap: wrap;
+    gap: 60px;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+#artist_area a{
+    font-family: "Josefin Sans", serif;
+    font-size: 20pt;
+    color: white;
+    text-decoration: none;
+}
+#artist_icon{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}

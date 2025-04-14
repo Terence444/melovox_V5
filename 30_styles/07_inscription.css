@@ -1,0 +1,398 @@
+/*---------- Section : Formulaire d'inscription------------*/
+body h3{
+    font-family: "Josefin Sans", serif;
+    font-size: 25pt;
+    color: white;
+    margin-top: 50px;
+}
+section{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 1250px;
+}
+
+#image_area{
+    width: 60%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#image{
+    width: 600px;
+    border-radius: 300px;
+    opacity: 0.7;
+}
+.vertical_line{
+    display: inline-block;
+    border-left: 1px solid #ccc;
+    margin-right: 25px;
+    height: 1100px; 
+}
+#contact_form{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 33px;
+}
+
+#contact_form h3{
+    font-family: "Josefin Sans", serif;
+    font-size: 25pt;
+    color: white;
+}
+#instructions{
+    background-color: rgba(125, 116, 116, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 55px;
+}
+#instructions h3{
+    font-family: "Josefin Sans", serif;
+    font-size: 25pt;
+    color: white;
+    margin-bottom: -5px;
+}
+
+#instructions p{
+    font-family: "Josefin Sans", serif;
+    font-size: 15pt;
+    color: white;
+}
+
+form{
+    width: 100%;
+    height: 1060px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    color: white;
+
+}
+
+#name_area{
+    width: 100%;
+    height: 30px;
+    font-family: "Josefin Sans", serif;
+    font-size: 17pt;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: flex-start;
+}
+
+#name_area label{
+width: 30%;
+
+}
+
+#name{
+    width: 70%;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    font-family: "Josefin Sans", serif;
+    font-size: 14pt;
+    margin-left: 10px;
+}
+
+#first_name_area{
+    width: 100%;
+    height: 30px;
+    font-family: "Josefin Sans", serif;
+    font-size: 17pt;
+    display: flex;
+    flex-direction:row;
+    text-align: left;
+    justify-content: flex-start;
+}
+
+#first_name_area label{
+    width: 30%;
+}
+
+#first_name{
+    width: 70%;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    font-family: "Josefin Sans", serif;
+    font-size: 14pt;
+    margin-left: 10px;
+}
+
+#birthday_area{
+    width: 100%;
+    height: 30px;
+    font-family: "Josefin Sans", serif;
+    font-size: 17pt;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: flex-start;
+}
+
+#birthday_area label{
+    width: 30%;
+}
+
+#birthday{
+    width: 150px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    font-family: "Josefin Sans", serif;
+    font-size: 14pt;
+    margin-left: 10px;
+}
+
+#email_area{
+    width: 100%;
+    height: 30px;
+    font-family: "Josefin Sans", serif;
+    font-size: 17pt;
+    display: flex;
+    flex-direction:row;
+    text-align: left;
+    justify-content: flex-start;
+}
+
+#email_area label{
+    width: 30%;
+}
+
+#email{
+    width: 70%;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    font-family: "Josefin Sans", serif;
+    font-size: 14pt;
+    margin-left: 10px;
+}
+
+#gender_area{
+    width: 100%;
+    height: 60px;
+    font-family: "Josefin Sans", serif;
+    font-size: 17pt;
+    display: flex;
+    flex-direction:row;
+    text-align: left;
+    justify-content: flex-start;
+}
+
+.question{
+    width: 30%;
+}
+
+
+.answers{
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+}
+#gender_area input{
+
+    border: none;
+    border-radius: 10px;
+    font-family: "Josefin Sans", serif;
+    font-size: 14pt;
+    width: 18px;
+}
+
+#user_type_area{
+    width: 100%;
+    height: 30px;
+    font-family: "Josefin Sans", serif;
+    font-size: 17pt;
+    display: flex;
+    flex-direction:row;
+    text-align: left;
+    justify-content: flex-start;
+}
+
+#user_type_area label{
+    width: 30%;
+}
+
+#user_type_area input{
+    border: none;
+    border-radius: 10px;
+    font-family: "Josefin Sans", serif;
+    font-size: 14pt;
+    width: 18px;
+}
+
+#share_area{
+    width: 100%;
+    height: 50px;
+    font-family: "Josefin Sans", serif;
+    font-size: 17pt;
+    display: flex;
+    flex-direction:row;
+    text-align: left;
+    justify-content: flex-start;
+}
+
+#share_area label{
+    width: 30%;
+}
+
+#share_area input{
+    border: none;
+    border-radius: 10px;
+    font-family: "Josefin Sans", serif;
+    font-size: 14pt;
+    width: 18px;
+}
+
+#country_area{
+    width: 100%;
+    height: 30px;
+    font-family: "Josefin Sans", serif;
+    font-size: 17pt;
+    display: flex;
+    flex-direction:row;
+    text-align: left;
+    justify-content: flex-start;
+}
+
+#country_area label{
+    width: 30%;
+}
+
+#country{
+    width: 70%;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    font-family: "Josefin Sans", serif;
+    font-size: 14pt;
+    margin-left: 10px;
+}
+
+#nickname_area{
+    width: 100%;
+    height: 30px;
+    font-family: "Josefin Sans", serif;
+    font-size: 17pt;
+    display: flex;
+    flex-direction:row;
+    text-align: left;
+    justify-content: flex-start;
+}
+#nickname_area label{
+    width: 30%;
+}
+#nickname{
+    width: 70%;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    font-family: "Josefin Sans", serif;
+    font-size: 14pt;
+    margin-left: 10px;
+}
+
+#password_area{
+    width: 100%;
+    height: 30px;
+    font-family: "Josefin Sans", serif;
+    font-size: 17pt;
+    display: flex;
+    flex-direction:row;
+    text-align: left;
+    justify-content: flex-start;
+}
+#password_area label{
+    width: 30%;
+}
+#password{
+    width: 70%;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    font-family: "Josefin Sans", serif;
+    font-size: 14pt;
+    margin-left: 10px;
+}
+
+#password_confirm_area{
+    width: 100%;
+    height: 30px;
+    font-family: "Josefin Sans", serif;
+    font-size: 17pt;
+    display: flex;
+    flex-direction:row;
+    text-align: left;
+    justify-content: flex-start;
+}
+
+#password_confirm_area label{
+    width: 30%;
+}
+
+#password_confirm{
+    width: 70%;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    font-family: "Josefin Sans", serif;
+    font-size: 14pt;
+    margin-left: 10px;
+}
+#add_profile_photo{
+    width: 100%;
+    height: 30px;
+    font-family: "Josefin Sans", serif;
+    font-size: 17pt;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: flex-start;;
+}
+
+#add_profile_photo label{
+width: 30%;
+}
+
+#fileInput{
+    font-family: "Josefin Sans", serif;
+    font-size: 12pt;
+    text-align: left;
+    margin-left: 8px;
+    width: 271px;
+}
+
+
+#sign_in{
+    font-family: "Josefin Sans", serif;
+    font-size: 14pt;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 15px;
+    background-color: #FAC94C;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16pt;
+    cursor: pointer;
+
+}

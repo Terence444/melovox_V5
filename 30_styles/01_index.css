@@ -1,0 +1,277 @@
+/*---------- Section 1 : Présentation ------------*/
+
+#presentation { 
+    width: 100%;
+  height: 800px;
+  margin-top: 70px;
+  background-image: url('../visuel/background/home_bg1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top-color: white;
+  border-top-style: groove;
+  border-bottom-color: white;
+  border-bottom-style: groove;
+  border-top-width: thin;
+  border-bottom-width: thin;
+}
+
+.symbols{
+    font-family: "Josefin Slab", serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+}
+#presentation h2{
+    color: white;
+    font-family: "Josefin Sans", serif;
+    letter-spacing: 10%;
+    font-size: 22pt;
+    text-align: center;
+}
+
+.zone_pres{
+    width: 90%;
+    height: 45%;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icone_lien{
+    width: 20%;
+    height: 60%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icone_lien img{
+    background-color: rgba(170, 155, 155, 0.5);
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+}
+
+.icone_lien a{
+    text-align: center;
+}
+
+.texte_pres{
+    width: 75%;
+    height: 60%;
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    font-family: "Josefin Sans", serif;
+}
+
+.zone_pres p{
+    color: white;
+
+}
+
+.zone_pres h2{
+    color: white;
+}
+
+.zone_pres a{
+    color: white;
+}
+
+/* --------- Section 2 : Artiste du moment-------- */
+.arrow{
+    width: 50px;
+    height: 50px;
+
+}
+
+#artiste_moment {
+    width: 80%;
+    height: 550px;
+    margin-top: 70px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#artiste_moment h2{
+    color: white;
+}
+
+
+/*--------------- slider sans animation------------------------ */
+
+ /* #slide_artiste {
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#slide_artiste .photo_artiste{
+    width: 300px;
+    height: 300px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#slide_artiste .photo_artiste img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+#slide_artiste .photo_artiste a{
+    font-size: 15pt;
+    color: white;
+    text-decoration: none;
+}  */
+
+/*--------------- Carrousel codepen------------------------ */
+
+
+  
+  .container {
+    margin: 0 auto;
+    width: 250px;
+    height: 200px;
+    position: relative;
+    perspective: 1000px;
+  }
+  
+  .carousel {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+  }
+  .carousel div {
+    transform-style: preserve-3d;
+    
+  }
+  
+  .item {
+    display: block;
+    position: absolute;
+    background: #000;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 5em;
+    text-align: center;
+    color: #FFF;
+    opacity: 1;
+    border-radius: 100%;
+    transition: transform 1s;
+  }
+
+  .item img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .a {
+    transform: rotateY(0deg) translateZ(250px);
+  }
+  .a .item {
+    background: #ed1c24;
+  }
+  .b {
+    transform: rotateY(60deg) translateZ(250px) rotateY(-60deg);
+  }
+  .b .item {
+    background: #0072bc;
+  }
+  .c {
+    transform: rotateY(120deg) translateZ(250px)  rotateY(-120deg);
+  }
+  .c .item {
+    background: #39b54a;
+  }
+  .d {
+    transform: rotateY(180deg) translateZ(250px) rotateY(-180deg);
+  }
+  .d .item {
+    background: #f26522;
+  }
+  .e {
+    transform: rotateY(240deg) translateZ(250px) rotateY(-240deg);
+  } 
+  .e .item {
+    background: #630460;
+  }
+  .f {
+    transform: rotateY(300deg) translateZ(250px) rotateY(-300deg);
+  }
+  .f .item {
+    background: #8c6239;
+  }
+  
+  .next, .prev {
+    color: #444;
+    padding: 1em 2em;
+    cursor: pointer;
+    background: #fac94c;
+    border-radius: 5px;
+    border-top: 1px solid #FFF;
+    box-shadow: 0 5px 0 #999;
+    transition: box-shadow 0.1s, top 0.1s;
+    position: relative;
+  }
+  .next:hover, .prev:hover { color: #000; }
+.prev:active {
+    top: -51%;
+    box-shadow: 0 1px 0 #999;
+  }
+
+  .next:active {
+    top: -170.5px;
+    box-shadow: 0 1px 0 #999;
+  }
+
+  .next { right: 33em; top: -170.5px; }
+  .prev { left: 33em; top: -51%; }
+
+/* --------- Section 3 : A propos-------- */
+#bg_a_propos{
+    width: 100%;
+    height: fit-content;
+    background-color: rgba(8, 7, 7, 0.63);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#a_propos {
+    width: 60%;
+  height: 550px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: rgba(8, 7, 7, 0.63);
+  color: white;
+  border-radius: 25px;
+  margin-bottom: 60px;
+  font-family: "Josefin Sans", serif;
+}
+
+#a_propos div {
+    width: 70%;
+    height: fit-content;
+    margin-left: 20px;
+}
