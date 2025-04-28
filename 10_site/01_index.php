@@ -1,12 +1,12 @@
-<?php require ("20_includes\header.php"); ?>
+<?php require "../20_includes/header.php"; ?>
 
 <section id="presentation">
     <h2><span class="symbols">♫</span> Bienvenue sur MÉLOVOX <span class="symbols">♫</span></h2>
 
     <div id="gallery" class="zone_pres">
         <div class="icone_lien">
-            <img src="60_visuels\icon\gallery_icon.png" alt="">
-            <a href="10_site\03_gallery.php">Accéder à la Galerie</a>
+            <img src="../60_visuels/icon/gallery_icon.png" alt="">
+            <a href="../10_site/03_gallery.php">Accéder à la Galerie</a>
         </div>
         <div class="texte_pres">
             <h3>Explorez la galerie</h3>
@@ -21,7 +21,7 @@
 
     <div id="liste_aleatoire" class="zone_pres">
         <div class="icone_lien">
-            <img src="60_visuels\icon\icone_playlist_aléatoire.png" alt="">
+            <img src="../60_visuels/icon/icone_playlist_aléatoire.png" alt="">
             <a href="">Laisser vous surprendre par le titre aléatoire du jour !</a>
         </div>
         <div class="texte_pres">
@@ -43,30 +43,30 @@
 <!--------------------- SLIDER SANS ANIMATIONS --------------------->
     
     <!-- <div id="slide_artiste">
-       <img class="arrow" src="visuel\icons\buttons_icons\Arrow_left_circle.png" alt="">
+       <img class="arrow" src="visuel/icons/buttons_icons/Arrow_left_circle.png" alt="">
         <div class="photo_artiste">
-            <a href="artist_profile.php"><img src="visuel\icons\users icons\alexia.png" alt=""></a>
+            <a href="artist_profile.php"><img src="visuel/icons/users icons/alexia.png" alt=""></a>
             <a href="artist_profile.php">Alexia</a>
         </div>
         <div class="photo_artiste">
-            <a href="artist_profile.php"><img src="visuel\icons\users icons\charles.png" alt=""></a>
+            <a href="artist_profile.php"><img src="visuel/icons/users icons/charles.png" alt=""></a>
             <a href="artist_profile.php">Charles</a>
         </div>
         <div class="photo_artiste">
-            <a href="artist_profile.php"><img src="visuel\icons\users icons\Eleana.png" alt=""></a>
+            <a href="artist_profile.php"><img src="visuel/icons/users icons/Eleana.png" alt=""></a>
             <a href="artist_profile.php">Eleana</a>
 
         </div>
 
         <div class="photo_artiste">
-            <a href="artist_profile.php"><img src="visuel\icons\users icons\Kévin.png" alt=""></a>
+            <a href="artist_profile.php"><img src="visuel/icons/users icons/Kévin.png" alt=""></a>
             <a href="artist_profile.php">Kévin</a>
         </div>
         <div class="photo_artiste">
-            <a href="artist_profile.php"><img src="visuel\icons\users icons\Orisa.png" alt=""></a>
+            <a href="artist_profile.php"><img src="visuel/icons/users icons/Orisa.png" alt=""></a>
             <a href="artist_profile.php">Orisa</a>
         </div>
-        <img class="arrow" src="visuel\icons\buttons_icons\Arrow_right_circle.png" alt="">
+        <img class="arrow" src="visuel/icons/buttons_icons/Arrow_right_circle.png" alt="">
      </div>  -->
 
 <!--------------------- Carrousel codepen --------------------->
@@ -75,28 +75,28 @@
 <div class="container">
   <div class="carousel">
     <div class="a">
-      <div class="item"><img src="60_visuels\icon\users icons\lil_jordan.png" alt=""></div>
+      <div class="item"><img src="../60_visuels/icon/users icons/lil_jordan.png" alt=""></div>
     </div>
     <div class="b">
-      <div class="item"><img src="60_visuels\icon\users icons\alexia.png" alt=""></div>
+      <div class="item"><img src="../60_visuels/icon/users icons/alexia.png" alt=""></div>
     </div>
     <div class="c">
-      <div class="item"><img src="60_visuels\icon\users icons\Catalia.png" alt=""></div>
+      <div class="item"><img src="../60_visuels/icon/users icons/Catalia.png" alt=""></div>
     </div>
     <div class="d">
-      <div class="item"><img src="60_visuels\icon\users icons\charles.png" alt=""></div>
+      <div class="item"><img src="../60_visuels/icon/users icons/charles.png" alt=""></div>
     </div>
     <div class="e">
-      <div class="item"><img src="60_visuels\icon\users icons\DJ_alfonso.png" alt=""></div>
+      <div class="item"><img src="../60_visuels/icon/users icons/DJ_alfonso.png" alt=""></div>
     </div>
     <div class="f">
-      <div class="item"><img src="60_visuels\icon\users icons\Lorde.png" alt=""></div>
+      <div class="item"><img src="../60_visuels/icon/users icons/Lorde.png" alt=""></div>
     </div>
 
   </div>
 </div>
-<div class="next">Next</div>
-<div class="prev">Prev</div>
+<div class="next">←</div>
+<div class="prev">→</div>
 
 
 </section>
@@ -126,6 +126,6 @@
 
 
   <!-- Inclusion du fichier JavaScript pour le slider splide -->
-  <script src="40_scripts\carrousel.js"></script>
+  <script src="../40_scripts/carrousel.js"></script>
 
-<?php require "20_includes/footer.php"; ?>
+<?php require "../20_includes/footer.php"; ?>

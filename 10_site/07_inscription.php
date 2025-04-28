@@ -1,4 +1,4 @@
-<?php require "20_includes\header.php"; ?>
+<?php require "../20_includes/header.php"; ?>
 
 <?php
 // Vérifier si une session est déjà active avant d'appeler session_start()
@@ -19,7 +19,7 @@ unset($_SESSION['email_error'], $_SESSION['pseudo_error'], $_SESSION['form_data'
 <section>
 
     <div id="image_area">
-        <img id="image" src="60_visuels\illustrations\your_turn.jpg" alt="">
+        <img id="image" src="../60_visuels/illustrations/your_turn.jpg" alt="">
     </div>
     <span class="vertical_line"></span>
 
@@ -30,7 +30,7 @@ unset($_SESSION['email_error'], $_SESSION['pseudo_error'], $_SESSION['form_data'
             <p>Veuillez renseigner les champs pour procéder à la création de votre espace personnel</p>
         </div>
 
-        <form action="50_config\traitement_inscription.php" method="post" enctype="multipart/form-data" id="inscriptionForm">
+        <form action="../50_config/config_inscrip.php" method="post" enctype="multipart/form-data" id="inscriptionForm">
             <div id="name_area">
                 <label for="name">Nom</label>
                 <input type="text" id="name" name="nom" required>
@@ -133,4 +133,4 @@ unset($_SESSION['email_error'], $_SESSION['pseudo_error'], $_SESSION['form_data'
     </div>
 </section>
 
-<?php require "20_includes/footer.php"; ?>
+<?php require "../20_includes/footer.php"; ?>

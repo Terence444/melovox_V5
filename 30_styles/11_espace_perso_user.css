@@ -49,8 +49,9 @@ h1{
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    gap: 200px;
+    justify-content: center;
+    gap: 110px;
+    width: 90%;
 }
 
 #user_stats h3{

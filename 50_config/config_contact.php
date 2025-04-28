@@ -1,6 +1,6 @@
 <?php
 // Inclure le fichier de connexion à la base de données
-include "70_database\connex_bdd.php";
+include "../70_database/connex_bdd.php";
 
 // Démarrer une session pour afficher les messages de confirmation ou d'erreur
 session_start();
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     $stmt->close();
-    header("Location: ../contactform.php");
+    header("Location: ../10_site/09_contactform.php");
     exit();
 }
 

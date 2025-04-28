@@ -17,16 +17,14 @@ section{
 
 #image_area{
     width: 50%;
-    height: 520px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 #image{
-    width: 520px;
-    border-radius: 300px;
-    opacity: 0.7;
+    width: 70%;
+    border-radius: 50%;
 }
 .vertical_line{
     display: inline-block;

@@ -1,5 +1,5 @@
 <?php
-include "70_database\connex_bdd.php";
+include "../70_database/connex_bdd.php";
 
 // Démarrer la session
 session_start();
@@ -42,11 +42,11 @@ if (isset($_SESSION['user_id'])) {
         }
         $stmt->close();
     }
-    header("Location: ../espace_perso_artiste.php");
+    header("Location: ../10_site/10_espace_perso_artist.php");
     exit();
 } else {
     // Rediriger l'utilisateur vers la page de connexion s'il n'est pas connecté
-    header("Location: ../connexion.php");
+    header("Location: ../10_site/08_connexion.php");
     exit();
 }
 

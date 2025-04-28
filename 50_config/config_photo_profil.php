@@ -1,5 +1,5 @@
 <?php
-include "70_database\connex_bdd.php";
+include "../70_database/connex_bdd.php";
 session_start();
 
 if (isset($_SESSION['user_id'])) {
@@ -19,8 +19,8 @@ if (isset($_SESSION['user_id'])) {
                 $nouveau_nom_fichier = __DIR__ . '/../uploads/photos_profil/' . uniqid() . '.' . $extension;
 
                 // Vérifier que le dossier existe ou le créer
-                if (!is_dir(__DIR__ . '/../uploads/photos_profil/')) {
-                    mkdir(__DIR__ . '/../uploads/photos_profil/', 0777, true);
+                if (!is_dir(__DIR__ . '/../80_imports/user_profile/')) {
+                    mkdir(__DIR__ . '/../80_imports/user_profile/', 0777, true);
                 }
 
                 // Déplacer le fichier uploadé
@@ -47,10 +47,10 @@ if (isset($_SESSION['user_id'])) {
             $_SESSION['photo_error'] = "Veuillez sélectionner un fichier.";
         }
     }
-    header("Location: ../espace_perso_artiste.php");
+    header("Location: ../30_styles/10_espace_perso_artist.css");
     exit();
 } else {
-    header("Location: ../connexion.php");
+    header("Location: ../10_site/08_connexion.php");
     exit();
 }
 $conn->close();

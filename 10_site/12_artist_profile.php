@@ -1,9 +1,9 @@
-<?php require "20_includes\header.php"; ?>
+<?php require "../20_includes/header.php"; ?>
 
 <section id="profile_info">
 
     <div id="artist_info">
-        <img src="60_visuels\icon\user_icon.png" alt="">
+        <img src="../60_visuels/icon/user_icon.png" alt="">
         <h2>Nom de l'artiste</h2>
     </div>
 
@@ -40,23 +40,23 @@
     <div id="album_list">
 
         <div class="album">
-            <a href="10_site\05_albums_ep_single.php"><img class="playlist_icon" src="60_visuels\icon\icone_playlist.png" alt=""></a>
-            <a href="10_site\05_albums_ep_single.php">Album N°1</a>
+            <a href="../10_site/05_albums_ep_single.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
+            <a href="../10_site/05_albums_ep_single.php">Album N°1</a>
         </div>
 
         <div class="album">
-            <a href="10_site\05_albums_ep_single.php"><img class="playlist_icon" src="60_visuels\icon\icone_playlist.png" alt=""></a>
-            <a href="10_site\05_albums_ep_single.php">Album N°2</a>
+            <a href="../10_site/05_albums_ep_single.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
+            <a href="../10_site/05_albums_ep_single.php">Album N°2</a>
         </div>
 
         <div class="album">
-            <a href="10_site\05_albums_ep_single.php"><img class="playlist_icon" src="60_visuels\icon\icone_playlist.png" alt=""></a>
-            <a href="10_site\05_albums_ep_single.php">Album N°3</a>
+            <a href="../10_site/05_albums_ep_single.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
+            <a href="../10_site/05_albums_ep_single.php">Album N°3</a>
         </div>
 
         <div class="album">
-            <a href="10_site\05_albums_ep_single.php"><img class="playlist_icon" src="60_visuels\icon\icone_playlist.png" alt=""></a>
-            <a href="10_site\05_albums_ep_single.php">Album N°4</a>
+            <a href="../10_site/05_albums_ep_single.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
+            <a href="../10_site/05_albums_ep_single.php">Album N°4</a>
         </div>
 
     </div>
@@ -66,23 +66,23 @@
     <div id="ep_single_list">
 
         <div class="ep_single">
-            <a href="10_site\05_albums_ep_single.php"><img class="playlist_icon" src="60_visuels\icon\icone_playlist.png" alt=""></a>
-            <a href="10_site\05_albums_ep_single.php">EP n°1</a>
+            <a href="../10_site/05_albums_ep_single.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
+            <a href="../10_site/05_albums_ep_single.php">EP n°1</a>
         </div>
 
         <div class="ep_single">
-            <a href="10_site\05_albums_ep_single.php"><img class="playlist_icon" src="60_visuels\icon\icone_playlist.png" alt=""></a>
-            <a href="10_site\05_albums_ep_single.php">EP n°2</a>
+            <a href="../10_site/05_albums_ep_single.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
+            <a href="../10_site/05_albums_ep_single.php">EP n°2</a>
         </div>
 
         <div class="ep_single">
-            <a href="10_site\05_albums_ep_single.php"><img class="playlist_icon" src="60_visuels\icon\icone_playlist.png" alt=""></a>
-            <a href="10_site\05_albums_ep_single.php">Single n°1</a>
+            <a href="../10_site/05_albums_ep_single.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
+            <a href="../10_site/05_albums_ep_single.php">Single n°1</a>
         </div>
 
         <div class="ep_single">
-            <a href="10_site\05_albums_ep_single.php"><img class="playlist_icon" src="60_visuels\icon\icone_playlist.png" alt=""></a>
-            <a href="10_site\05_albums_ep_single.php">Single n°2</a>
+            <a href="../10_site/05_albums_ep_single.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
+            <a href="../10_site/05_albums_ep_single.php">Single n°2</a>
         </div>
 
     </div>
@@ -106,4 +106,4 @@
     </div>
 </section>
 
-<?php require "20_includes/footer.php"; ?>
+<?php require "../20_includes/footer.php"; ?>

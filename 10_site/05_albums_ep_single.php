@@ -1,11 +1,11 @@
-<?php require "20_includes\header.php"; ?>
+<?php require "../20_includes/header.php"; ?>
 
 <section id="album_ep_single_info">
     <h1>Album/EP/Single</h1>
     <div id="album_info">
-        <img id="cover" src="60_visuels\icon\icone_playlist.png" alt="">
+        <img id="cover" src="../60_visuels/icon/icone_playlist.png" alt="">
         <div id="artist_name">
-            <a href="10_site\12_artist_profile.php"><img id="artist_icon" src="60_visuels\icon\users icons\alexia.png" alt=""></a>
+            <a href="../10_site/12_artist_profile.php"><img id="artist_icon" src="../60_visuels/icon/users icons/alexia.png" alt=""></a>
             <h6>Nom de l’artiste</h6>
         </div>
         <p>2024</p>
@@ -102,4 +102,4 @@
 
 </section>
 
-<?php require "20_includes/footer.php"; ?>
+<?php require "../20_includes/footer.php"; ?>

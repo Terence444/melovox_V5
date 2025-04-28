@@ -1,11 +1,11 @@
-<?php require "20_includes\header.php"; ?>
+<?php require "../20_includes/header.php"; ?>
 
 <section id="playlist_info">
     <h1>Playlist</h1>
     <div id="playlist_cover">
-        <img src="60_visuels\icon\icone_playlist.png" alt="">
+        <img src="../60_visuels/icon/icone_playlist.png" alt="">
         <div id="user_name">
-            <a href=""><img id="artist_icon" src="60_visuels\icon\user_icon.png" alt=""></a>
+            <a href=""><img id="artist_icon" src="../60_visuels/icon/user_icon.png" alt=""></a>
             <h6>Nom de l’utilisateur</h6>
         </div>
         <p>2024</p>
@@ -100,4 +100,4 @@
 
 </section>
 
-<?php require "20_includes/footer.php"; ?>
+<?php require "../20_includes/footer.php"; ?>

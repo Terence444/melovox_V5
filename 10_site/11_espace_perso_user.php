@@ -1,6 +1,6 @@
 <?php
-require "20_includes\header.php";
-include "70_database\connex_bdd.php";
+require "../20_includes/header.php";
+include "../70_database/connex_bdd.php";
 
 // Vérifier si une session est déjà active avant d'appeler session_start()
 if (session_status() === PHP_SESSION_NONE) {
@@ -30,10 +30,10 @@ $stmt->close();
     // var_dump($photo_profil); // Pour débogage
 
     // Chemin du fichier sur le serveur
-    $chemin_fichier = __DIR__ . 'uploads/photos_profil/' . $photo_profil;
+    $chemin_fichier = __DIR__ . '../80_imports/user_profile/' . $photo_profil;
 
     // Chemin URL pour le navigateur (en supposant que le chemin depuis la racine du serveur soit /uploads/photos_profil/)
-    $chemin_image = '/uploads/photos_profil/' . $photo_profil;
+    $chemin_image = '../80_imports/user_profile/' . $photo_profil;
     ?>
 
 
@@ -44,7 +44,7 @@ $stmt->close();
         <?php if (!empty($photo_profil) && file_exists($chemin_fichier)) : ?>
             <img src="<?php echo htmlspecialchars($chemin_image); ?>" alt="Photo de profil" style="max-width: 200px; border-radius: 50%;">
         <?php else : ?>
-            <img src="uploads/photos_profil/default_profile.png" alt="Photo de profil par défaut" style="max-width: 200px; border-radius: 50%; text-align: center;">
+            <img src="../80_imports/user_profile/default_profile.png" alt="Photo de profil par défaut" style="max-width: 200px; border-radius: 50%; text-align: center;">
         <?php endif; ?>
         
     
@@ -59,7 +59,7 @@ $stmt->close();
 
 
     <!-- Modif photo de profil -->
-    <form id="photo_switch" action="50_config\config_photo_profil.php" method="post" enctype="multipart/form-data">
+    <form id="photo_switch" action="../50_config/config_photo_profil.php" method="post" enctype="multipart/form-data">
         <label for="nouvelle_photo">Changer ma photo de profil :</label>
         <input id="select_file" type="file" name="nouvelle_photo" id="nouvelle_photo" accept="image/*" required>
         <input id="img_update" type="submit" value="Mettre à jour">
@@ -83,37 +83,37 @@ if (isset($_SESSION['photo_error'])) {
     <h4>Vos playlist</h4>
     <div id="playlist_area">
         <div class="playlist">
-            <a href="10_site\06_playlist.php"><img class="playlist_icon" src="60_visuels\icon\icone_playlist.png" alt=""></a>
+            <a href="10_site/06_playlist.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
 
-            <a href="10_site\06_playlist.php">Playlist N°1</a>
+            <a href="10_site/06_playlist.php">Playlist N°1</a>
         </div>
 
         <div class="playlist">
-            <a href="10_site\06_playlist.php"><img class="playlist_icon" src="60_visuels\icon\icone_playlist.png" alt=""></a>
-            <a href="10_site\06_playlist.php">Playlist N°2</a>
+            <a href="10_site/06_playlist.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
+            <a href="10_site/06_playlist.php">Playlist N°2</a>
         </div>
 
         <div class="playlist">
-            <a href="10_site\06_playlist.php"><img class="playlist_icon" src="60_visuels\icon\icone_playlist.png" alt=""></a>
-            <a href="10_site\06_playlist.php">Playlist N°3</a>
+            <a href="10_site/06_playlist.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
+            <a href="10_site/06_playlist.php">Playlist N°3</a>
         </div>
     </div>
 
     <h4>Vos albums/EP/Single</h4>
     <div id="album_area">
         <div class="album">
-            <a href="10_site\05_albums_ep_single.php"><img class="playlist_icon" src="60_visuels\icon\icone_playlist.png" alt=""></a>
-            <a href="10_site\05_albums_ep_single.php">Album</a>
+            <a href="10_site/05_albums_ep_single.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
+            <a href="10_site/05_albums_ep_single.php">Album</a>
         </div>
 
         <div class="album">
-            <a href="10_site\05_albums_ep_single.php"><img class="playlist_icon" src="60_visuels\icon\icone_playlist.png" alt=""></a>
-            <a href="10_site\05_albums_ep_single.php">EP</a>
+            <a href="10_site/05_albums_ep_single.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
+            <a href="10_site/05_albums_ep_single.php">EP</a>
         </div>
 
         <div class="album">
-            <a href="10_site\05_albums_ep_single.php"><img class="playlist_icon" src="60_visuels\icon\icone_playlist.png" alt=""></a>
-            <a href="10_site\05_albums_ep_single.php">Single</a>
+            <a href="10_site/05_albums_ep_single.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
+            <a href="10_site/05_albums_ep_single.php">Single</a>
         </div>
     </div>
 
@@ -124,9 +124,9 @@ if (isset($_SESSION['photo_error'])) {
 <?php 
         } else {
             // Rediriger l'utilisateur vers la page de connexion s'il n'est pas connecté
-            header("Location: ../connexion.php");
+            header("Location: ../10_site/08_connexion.php");
             exit();
         }
         
-        require "20_includes/footer.php";
+        require "../20_includes/footer.php";
     ?>

@@ -15,17 +15,15 @@ section{
 }
 
 #image_area{
-    width: 60%;
-    height: 600px;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 #image{
-    width: 600px;
-    border-radius: 300px;
-    opacity: 0.7;
+    width: 70%;
+    border-radius: 50%;
 }
 .vertical_line{
     display: inline-block;

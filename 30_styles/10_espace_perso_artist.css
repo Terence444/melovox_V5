@@ -47,8 +47,9 @@ h1{
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    gap: 200px;
+    justify-content: center;
+    gap: 110px;
+    width: 90%;
 }
 
 #user_stats h3{
@@ -107,6 +108,23 @@ h1{
     padding-bottom: 20px;
 }
 
+#bio_button_area{
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+}
+
+#save_bio_button{
+    width: 160px;
+    height: 38px;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: #FAC94C;
+    font-family: "Josefin Sans", serif;
+    font-size: 17px;
+    cursor: pointer
+}
 #bio_artiste button{
     width: 160px;
     height: 38px;
@@ -150,10 +168,24 @@ h1{
 
 #import_musique input{
     width: 170px;
-  height: 25px;
-  border: none;
-  border-radius: 10px;
-  font-family: "Josefin Sans", serif;
+    height: 25px;
+    border: none;
+    border-radius: 10px;
+    font-family: "Josefin Sans", serif;
+}
+
+#fichier_musique{
+    width: 250px;
+}
+
+#import_music_button{
+    background-color: #FAC94C;
+    font-family: "Josefin Sans", serif;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 10px;
 }
 
 #liste_musiques {
@@ -183,6 +215,7 @@ h1{
     align-items: center;
     height: max-content;
     gap : 5%;
+    justify-content: center;
 }
 
 #liste_musiques li {

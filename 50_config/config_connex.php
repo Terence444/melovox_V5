@@ -1,6 +1,6 @@
 <?php
 // Inclure le fichier de connexion à la base de données
-include "70_database\connex_bdd.php";
+include "../70_database/connex_bdd.php";
 
 // Démarrer une session
 session_start();
@@ -44,22 +44,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             // Rediriger en fonction du statut d'artiste
             if ($user['est_artiste'] == 1) {
-                header("Location: ../espace_perso_artiste.php");
+                header("Location: ../10_site/10_espace_perso_artist.php");
                 exit();
             } else {
-                header("Location: ../espace_perso_user.php");
+                header("Location: ../10_site/11_espace_perso_user.php");
                 exit();
             }
         } else {
             // Mot de passe incorrect
             $_SESSION['login_error'] = "Adresse email ou mot de passe incorrect.";
-            header("Location: ../connexion.php");
+            header("Location: ../10_site/08_connexion.php");
             exit();
         }
     } else {
         // Aucun utilisateur trouvé avec cet email
         $_SESSION['login_error'] = "Adresse email ou mot de passe incorrect.";
-        header("Location: ../connexion.php");
+        header("Location: ../10_site/08_connexion.php");
         exit();
     }
 

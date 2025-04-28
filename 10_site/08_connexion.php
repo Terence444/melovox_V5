@@ -1,10 +1,10 @@
-<?php require "20_includes\header.php"; ?>
+<?php require "../20_includes/header.php"; ?>
 
 <body>
 
 <section>
     <div id="image_area">
-        <img id="image" src="60_visuels\illustrations\social_music_network_2.jpg" alt="">
+        <img id="image" src="../60_visuels/illustrations/social_music_network_2.jpg" alt="">
     </div>
     <span class="vertical_line"></span>
 
@@ -21,7 +21,8 @@
         </div> 
       <img id="decorative_line" src="visuel/image/Decoration.png" alt=""> -->
 
-        <form action="50_config\traitement_connexion.php" method="post">
+      <div id="form_area">  
+      <form action="../50_config/config_connex.php" method="post">
             <h1>Veuillez renseigner les champs pour vous connecter !</h1>
             <div id="email_area">
                 <label for="email">Adresse Email</label>
@@ -39,10 +40,11 @@
             <div id="sign_in">
                 <input id="connect" type="submit" value="Se connecter">
             </div>
-            <p>Pas encore inscrit? <a href="10_site\07_inscription.php">Inscrivez-vous ici</a></p>
+            <p>Pas encore inscrit? <a href="../10_site/07_inscription.php">Inscrivez-vous ici</a></p>
         </form>
+        </div>
 
-    </div>
+  
 </section>
 
-<?php require "20_includes/footer.php"; ?>
+<?php require "../20_includes/footer.php"; ?>

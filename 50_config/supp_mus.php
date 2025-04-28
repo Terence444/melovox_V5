@@ -1,5 +1,5 @@
 <?php
-include "70_database\connex_bdd.php";
+include "../70_database/connex_bdd.php";
 session_start();
 
 if (isset($_POST['musique_id']) && isset($_SESSION['user_id'])) {
@@ -25,6 +25,6 @@ if (isset($_POST['musique_id']) && isset($_SESSION['user_id'])) {
     $stmt->close();
 }
 
-header("Location: ../espace_perso_artiste.php");
+header("Location: ../10_site/10_espace_perso_artist.php");
 exit();
 ?>

@@ -1,4 +1,4 @@
-<?php require "20_includes\header.php"; ?>
+<?php require "../20_includes/header.php"; ?>
 
 
 <style>
@@ -19,7 +19,7 @@
 <section>
 
     <div id="image_area">
-        <img id="image" src="60_visuels\illustrations\Crowd_concert.jpg" alt="">
+        <img id="image" src="../60_visuels/illustrations/Crowd_concert.jpg" alt="">
     </div>
     <span class="vertical_line"></span>
 
@@ -45,7 +45,7 @@
             }
         ?>
 
-        <form onsubmit="return validateForm()" method="post" action="50_config\config_contact.php">
+        <form onsubmit="return validateForm()" method="post" action="../50_config/config_contact.php">
                 <div id="name_area">
                     <input type="text" id="name" name="name" placeholder="Votre nom" required>
                 </div>
@@ -97,4 +97,4 @@
     </div>
 </section>
 
-<?php require "20_includes/footer.php"; ?>
+<?php require "../20_includes/footer.php"; ?>

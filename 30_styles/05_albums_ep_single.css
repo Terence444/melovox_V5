@@ -61,33 +61,33 @@ font-size: 17pt;
     margin-right: 47px;
 }
 #shuffle {
-    background-image: url('../visuel/icons/buttons_icons/Shuffle.png');
+    background-image: url('../60_visuels/icon/buttons_icons/Shuffle.png');
     background-size: cover;
     border-radius: 100px
 }
 
 #previous{
-    background-image: url('../visuel/icons/buttons_icons/previous.png');
+    background-image: url('../60_visuels/icon/buttons_icons/previous.png');
     background-size: cover;
     border-radius: 100px
 }
 
 #play{
-    background-image: url('../visuel/icons/buttons_icons/Bouton Play.png');
+    background-image: url('../60_visuels/icon/buttons_icons/Bouton_Play.png');
     background-size: cover;
     border-radius: 100px
 }
 
 #skip{
 
-    background-image: url('../visuel/icons/buttons_icons/skip.png');
+    background-image: url('../60_visuels/icon/buttons_icons/skip.png');
     background-size: cover;
 
     border-radius: 100px
 }
 
 #plus{
-    background-image: url('../visuel/icons/buttons_icons/Plus.png');
+    background-image: url('../60_visuels/icon/buttons_icons/Plus.png');
     background-size: cover;
     border-radius: 100px
 }

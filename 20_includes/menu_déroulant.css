@@ -86,7 +86,7 @@
       margin-top: 0;
       margin-bottom: 0;
       padding: 5px 0;
-      border-radius: 4px;
+      border-radius: 11px;
       transform: scale(0);
       transform-origin: top left;
       transition: transform .3s,visibility 0s 0s;
@@ -156,3 +156,21 @@
   .menu__btn > img:nth-child(1){
     width: 90%;
   }
+
+  .menu__list li {
+    width: auto; /* ou une valeur fixe plus large, comme 150px */
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+}
+
+.menu__list li a {
+  font-size: 14px; /* Ajustez selon vos besoins */
+}
+
+.menu__list {
+  min-width: 150px; /* Ajustez selon vos besoins */
+}
+
+.menu__list li a[href*="espace_perso"] {
+  white-space: nowrap;
+  font-size: 13px; /* Légèrement plus petit que les autres liens */
+}

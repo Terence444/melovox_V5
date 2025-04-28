@@ -1,5 +1,5 @@
 <?php
-    include "70_database\connex_bdd.php";
+    include "../70_database/connex_bdd.php";
 
     // Démarrer la session pour stocker les messages d'erreur
     session_start();
@@ -48,7 +48,7 @@
         $_SESSION['pseudo_error'] = $pseudo_error;
         // Stocker les données saisies pour les réafficher
         $_SESSION['form_data'] = $_POST;
-        header("Location: ../inscription.php");
+        header("Location: ../10_site/07_inscription.php");
         exit();
     }
 
@@ -56,7 +56,7 @@
     $photo_profil = null;
     if (isset($_FILES['profilePhoto']) && $_FILES['profilePhoto']['error'] === UPLOAD_ERR_OK) {
         // Créer un nom de fichier unique pour éviter les conflits
-        $photo_profil = 'uploads/' . uniqid() . '_' . basename($_FILES['profilePhoto']['name']);
+        $photo_profil = '80_imports/user_profile/' . uniqid() . '_' . basename($_FILES['profilePhoto']['name']);
         move_uploaded_file($_FILES['profilePhoto']['tmp_name'], $photo_profil);
     }
 
@@ -73,10 +73,10 @@
         unset($_SESSION['form_data']);
         // Rediriger l'utilisateur en fonction de ses réponses
         if ($est_artiste == 1 && $partage_creations == 1) {
-            header("Location: ../espace_perso_artiste.php");
+            header("Location: ../10_site/10_espace_perso_artist.php");
             exit();
         } else {
-            header("Location: ../espace_perso_user.php");
+            header("Location: ../10_site/11_espace_perso_user.php");
             exit();
         }
     } else {

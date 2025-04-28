@@ -1,6 +1,6 @@
 <?php
-require "20_includes\header.php";
-include "70_database\connex_bdd.php";
+require "../20_includes/header.php";
+include "../70_database/connex_bdd.php";
 
 // Vérifier si une session est déjà active avant d'appeler session_start()
 if (session_status() === PHP_SESSION_NONE) {
@@ -30,10 +30,10 @@ if (isset($_SESSION['user_id'])) {
     // var_dump($photo_profil); // Pour débogage
 
     // Chemin du fichier sur le serveur
-    $chemin_fichier = __DIR__ . 'uploads/photos_profil/' . $photo_profil;
+    $chemin_fichier = __DIR__ . '80_imports/user_profile' . $photo_profil;
 
     // Chemin URL pour le navigateur (en supposant que le chemin depuis la racine du serveur soit /uploads/photos_profil/)
-    $chemin_image = '/uploads/photos_profil/' . $photo_profil;
+    $chemin_image = '/80_imports/user_profile' . $photo_profil;
     ?>
 
 
@@ -44,7 +44,7 @@ if (isset($_SESSION['user_id'])) {
         <?php if (!empty($photo_profil) && file_exists($chemin_fichier)) : ?>
             <img src="<?php echo htmlspecialchars($chemin_image); ?>" alt="Photo de profil" style="max-width: 200px; border-radius: 50%;">
         <?php else : ?>
-            <img src="uploads/photos_profil/default_profile.png" alt="Photo de profil par défaut" style="max-width: 200px; border-radius: 50%; text-align: center;">
+            <img src="../80_imports\user_profile\default_profile.png" alt="Photo de profil par défaut" style="max-width: 200px; border-radius: 50%; text-align: center;">
         <?php endif; ?>
 
         <h3><?php echo htmlspecialchars($prenom . ' ' . $nom); ?></h3>
@@ -57,7 +57,7 @@ if (isset($_SESSION['user_id'])) {
     </div>
 
     <!-- Modif photo de profil -->
-    <form id="photo_switch" action="50_config\config_photo_profil.php" method="post" enctype="multipart/form-data">
+    <form id="photo_switch" action="../50_config/config_photo_profil.php" method="post" enctype="multipart/form-data">
         <label for="nouvelle_photo">Changer ma photo de profil :</label>
         <input id="select_file" type="file" name="nouvelle_photo" id="nouvelle_photo" accept="image/*" required>
         <input id="img_update" type="submit" value="Mettre à jour">
@@ -91,18 +91,20 @@ if (isset($_SESSION['photo_error'])) {
         <button type="button" id="modifier_bio_btn">Modifier ma bio</button>
 
         <!-- Formulaire de modification de la biographie -->
-        <form id="form_bio" action="50_config\config_bio.php" method="post" style="display: none;">
+        <form id="form_bio" action="../50_config/config_bio.php" method="post" style="display: none;">
             <textarea name="biographie" rows="10" cols="50" required><?php echo htmlspecialchars($biographie); ?></textarea>
             <br>
-            <input type="submit" value="Enregistrer">
+            <div id= "bio_button_area">
+            <input id="save_bio_button" type="submit" value="Enregistrer">
             <button type="button" id="annuler_btn">Annuler</button>
+            </div>
         </form>
     </section>
     </section>
 
     <section id="import_musique">
         <h2>Déposer de nouveaux titres</h2>
-        <form action="50_config\config_ajout_mus.php" method="post" enctype="multipart/form-data">
+        <form action="../50_config/config_ajout_mus.php" method="post" enctype="multipart/form-data">
             <div>
                 <label for="titre">Titre</label>
                 <input type="text" id="titre" name="titre" required>
@@ -120,11 +122,11 @@ if (isset($_SESSION['photo_error'])) {
                 <input type="text" id="genre" name="genre">
             </div>
             <div>
-                <label for="fichier_musique">Fichier Musique (poids maximum du fichier : 2MO)</label>
+                <label for="fichier_musique">Fichier Musique</label>
                 <input type="file" id="fichier_musique" name="fichier_musique" accept="audio/*" required>
             </div>
             <div>
-                <input type="submit" value="Importer">
+                <input id="import_music_button" type="submit" value="Importer">
             </div>
         </form>
     </section>
@@ -191,11 +193,11 @@ if (isset($_SESSION['photo_error'])) {
     <?php
         } else {
             // Rediriger l'utilisateur vers la page de connexion s'il n'est pas connecté
-            header("Location: ../connexion.php");
+            header("Location: ../10_site/08_connexion.php");
             exit();
         }
 
-        require "20_includes/footer.php";
+        require "../20_includes/footer.php";
     ?>
 
 <?php
