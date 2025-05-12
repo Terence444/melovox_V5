@@ -60,7 +60,7 @@ if ($query) {
 <main>
     <div id="search_area">
         <span class="material-symbols-outlined">search</span>
-        <form action="search_results.php" method="GET">
+        <form action="50_config\search_results.php" method="GET">
             <input type="text" name="query" placeholder="Tapez votre recherche..." value="<?= $query ?>">
             <button type="submit">Rechercher</button>
         </form>
@@ -69,9 +69,22 @@ if ($query) {
     <div id="filters">
         <div>
             <input type="checkbox" name="Artiste" id="Artiste" <?= $filtre_artiste ? 'checked' : '' ?>>
-            <label class="text_filters" for="Artiste"> Artiste</label>
+            <label class="text_filters" for="Artiste">Artiste</label>
         </div>
-        <!-- Répétez pour les autres filtres... -->
+        <div>
+            <input type="checkbox" name="Titre" id="Titre"> <?= $filtre_titre ? 'checked' : '' ?>>
+            <label class="text_filters" for="Titre">Titre</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="Albums" id="Albums"> <?= $filtre_albums ? 'checked' : '' ?>>
+            <label class="text_filters" for="Albums">Albums</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="Playlist" id="Playlist"> <?= $filtre_playlist ? 'checked' : '' ?>>
+            <label class="text_filters" for="Playlist">Playlist</label>
+        </div>
     </div>
 
     <div id="zone_result">

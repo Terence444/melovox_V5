@@ -4,7 +4,7 @@
 
 <section>
     <div id="image_area">
-        <img id="image" src="../60_visuels/illustrations/social_music_network_2.jpg" alt="">
+        <img id="image" src="../60_visuels/illustrations/social_music_network_2.jpg" alt="Réseau de sphère bleu et blanche contenant des notes de musique">
     </div>
     <span class="vertical_line"></span>
 

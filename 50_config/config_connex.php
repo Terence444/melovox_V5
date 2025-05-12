@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
 
             // Rediriger en fonction du statut d'artiste
-            if ($user['est_artiste'] == 1) {
+            if ($user['est_artiste'] == 'oui') {
                 header("Location: ../10_site/10_espace_perso_artist.php");
                 exit();
             } else {

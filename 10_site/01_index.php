@@ -5,7 +5,7 @@
 
     <div id="gallery" class="zone_pres">
         <div class="icone_lien">
-            <img src="../60_visuels/icon/gallery_icon.png" alt="">
+            <img src="../60_visuels/icon/gallery_icon.png" alt="Icone de dossier beige avec une étiquette colorée et avec un CD qui en sort">
             <a href="../10_site/03_gallery.php">Accéder à la Galerie</a>
         </div>
         <div class="texte_pres">
@@ -21,7 +21,7 @@
 
     <div id="liste_aleatoire" class="zone_pres">
         <div class="icone_lien">
-            <img src="../60_visuels/icon/icone_playlist_aléatoire.png" alt="">
+            <img src="../60_visuels/icon/icone_playlist_aléatoire.png" alt="Icône de lecture aléatoire">
             <a href="">Laisser vous surprendre par le titre aléatoire du jour !</a>
         </div>
         <div class="texte_pres">
@@ -75,22 +75,22 @@
 <div class="container">
   <div class="carousel">
     <div class="a">
-      <div class="item"><img src="../60_visuels/icon/users icons/lil_jordan.png" alt=""></div>
+      <div class="item"><img src="../60_visuels/icon/users icons/lil_jordan.png" alt="Photo d'artiste"></div>
     </div>
     <div class="b">
-      <div class="item"><img src="../60_visuels/icon/users icons/alexia.png" alt=""></div>
+      <div class="item"><img src="../60_visuels/icon/users icons/alexia.png" alt="Photo d'artiste"></div>
     </div>
     <div class="c">
-      <div class="item"><img src="../60_visuels/icon/users icons/Catalia.png" alt=""></div>
+      <div class="item"><img src="../60_visuels/icon/users icons/Catalia.png" alt="Photo d'artiste"></div>
     </div>
     <div class="d">
-      <div class="item"><img src="../60_visuels/icon/users icons/charles.png" alt=""></div>
+      <div class="item"><img src="../60_visuels/icon/users icons/charles.png" alt="Photo d'artiste"></div>
     </div>
     <div class="e">
-      <div class="item"><img src="../60_visuels/icon/users icons/DJ_alfonso.png" alt=""></div>
+      <div class="item"><img src="../60_visuels/icon/users icons/DJ_alfonso.png" alt="Photo d'artiste"></div>
     </div>
     <div class="f">
-      <div class="item"><img src="../60_visuels/icon/users icons/Lorde.png" alt=""></div>
+      <div class="item"><img src="../60_visuels/icon/users icons/Lorde.png" alt="Photo d'artiste"></div>
     </div>
 
   </div>

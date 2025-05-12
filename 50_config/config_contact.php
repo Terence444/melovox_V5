@@ -15,11 +15,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $message = $_POST['message'];
 
     // Préparer et exécuter la requête d'insertion
-    $sql = "INSERT INTO messages_contact (nom, prenom, email, est_artiste, message)
-            VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO contact (nom, prenom, email, est_artiste, message)
+        VALUES (?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssss", $nom, $prenom, $email, $est_artiste, $message);
+    $stmt->bind_param("sssis", $nom, $prenom, $email, $est_artiste, $message);
 
     if ($stmt->execute()) {
         $_SESSION['contact_success'] = "Votre message a été envoyé avec succès !";

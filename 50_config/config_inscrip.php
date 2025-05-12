@@ -56,7 +56,7 @@
     $photo_profil = null;
     if (isset($_FILES['profilePhoto']) && $_FILES['profilePhoto']['error'] === UPLOAD_ERR_OK) {
         // Créer un nom de fichier unique pour éviter les conflits
-        $photo_profil = '80_imports/user_profile/' . uniqid() . '_' . basename($_FILES['profilePhoto']['name']);
+        $photo_profil = '../80_imports/user_profile/' . uniqid() . '_' . basename($_FILES['profilePhoto']['name']);
         move_uploaded_file($_FILES['profilePhoto']['tmp_name'], $photo_profil);
     }
 

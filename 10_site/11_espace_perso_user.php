@@ -12,9 +12,9 @@ if (isset($_SESSION['user_id'])) {
      $utilisateur_id = $_SESSION['user_id'];
 
 // Récupérer les informations de l'utilisateur
-$sql = "SELECT u.nom, u.prenom, u.email, a.biographie, a.photo_profil
+$sql = "SELECT u.nom, u.prenom, u.email, a.Bio as biographie, u.photo_profil
         FROM utilisateurs u
-        LEFT JOIN artistes a ON u.id = a.utilisateur_id
+        LEFT JOIN artistes a ON u.id = a.Id_Artiste
         WHERE u.id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $utilisateur_id);
@@ -26,16 +26,13 @@ $stmt->close();
 ?>
 
     <?php
-    // Après avoir récupéré $photo_profil depuis la base de données
-    // var_dump($photo_profil); // Pour débogage
-
-    // Chemin du fichier sur le serveur
-    $chemin_fichier = __DIR__ . '../80_imports/user_profile/' . $photo_profil;
-
-    // Chemin URL pour le navigateur (en supposant que le chemin depuis la racine du serveur soit /uploads/photos_profil/)
+    // CORRECTION: simplifier la vérification d'existence du fichier
+    // Chemin URL pour le navigateur
     $chemin_image = '../80_imports/user_profile/' . $photo_profil;
+    
+    // Chemin complet du serveur pour vérifier si le fichier existe
+    $chemin_fichier = $_SERVER['DOCUMENT_ROOT'] . str_replace('..', '', $chemin_image);
     ?>
-
 
     <h1>Bienvenue sur votre espace</h1><br>
 
@@ -50,7 +47,7 @@ $stmt->close();
     
         <h3><?php echo htmlspecialchars($prenom . ' ' . $nom); ?></h3>
         <div id="user_stats">
-            <h3>Nombre <br>d’abonnements</h3>
+            <h3>Nombre <br>d'abonnements</h3>
             <h3>Nombre <br>de playlists</h3>
         </div>
     </div>
@@ -83,18 +80,18 @@ if (isset($_SESSION['photo_error'])) {
     <h4>Vos playlist</h4>
     <div id="playlist_area">
         <div class="playlist">
-            <a href="10_site/06_playlist.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
+            <a href="10_site/06_playlist.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt="icone de playlist"></a>
 
             <a href="10_site/06_playlist.php">Playlist N°1</a>
         </div>
 
         <div class="playlist">
-            <a href="10_site/06_playlist.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
+            <a href="10_site/06_playlist.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt="icone de playlist"></a>
             <a href="10_site/06_playlist.php">Playlist N°2</a>
         </div>
 
         <div class="playlist">
-            <a href="10_site/06_playlist.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
+            <a href="10_site/06_playlist.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt="icone de playlist"></a>
             <a href="10_site/06_playlist.php">Playlist N°3</a>
         </div>
     </div>
@@ -102,17 +99,17 @@ if (isset($_SESSION['photo_error'])) {
     <h4>Vos albums/EP/Single</h4>
     <div id="album_area">
         <div class="album">
-            <a href="10_site/05_albums_ep_single.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
+            <a href="10_site/05_albums_ep_single.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt="icone de playlist"></a>
             <a href="10_site/05_albums_ep_single.php">Album</a>
         </div>
 
         <div class="album">
-            <a href="10_site/05_albums_ep_single.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
+            <a href="10_site/05_albums_ep_single.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt="icone de playlist"></a>
             <a href="10_site/05_albums_ep_single.php">EP</a>
         </div>
 
         <div class="album">
-            <a href="10_site/05_albums_ep_single.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt=""></a>
+            <a href="10_site/05_albums_ep_single.php"><img class="playlist_icon" src="../60_visuels/icon/icone_playlist.png" alt="icone de playlist"></a>
             <a href="10_site/05_albums_ep_single.php">Single</a>
         </div>
     </div>

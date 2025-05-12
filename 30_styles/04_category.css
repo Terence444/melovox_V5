@@ -1,3 +1,8 @@
+*{
+    a:visited {
+      color: #ffffff;
+    }
+  }
 /* --------- Section 1-------- */
 #playlist{
     width: 100%;

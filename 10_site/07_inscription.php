@@ -19,7 +19,7 @@ unset($_SESSION['email_error'], $_SESSION['pseudo_error'], $_SESSION['form_data'
 <section>
 
     <div id="image_area">
-        <img id="image" src="../60_visuels/illustrations/your_turn.jpg" alt="">
+        <img id="image" src="../60_visuels/illustrations/your_turn.jpg" alt="Personne vêtue d'une robe blanche avec des accents bleu marine, tenant un microphone vintage et tendant un bras vers l'avant, sur un fond divisé en deux nuances de bleu">
     </div>
     <span class="vertical_line"></span>
 

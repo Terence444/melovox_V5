@@ -3,14 +3,22 @@
 
 <style>
         .message {
-            font-size: 1em;
+            font-size: 2em;
             margin: 10px 0;
         }
         .success {
-            color: green;
+            color: white;
+            background-color: green;
+            border-style: double;
+            border-radius: 10px;
+            border-width: thick;
         }
         .error {
-            color: red;
+            color: white;
+            background-color: red;
+            border-style: double;
+            border-radius: 10px;
+            border-width: thick;
         }
 </style>    
 
@@ -19,7 +27,7 @@
 <section>
 
     <div id="image_area">
-        <img id="image" src="../60_visuels/illustrations/Crowd_concert.jpg" alt="">
+        <img id="image" src="../60_visuels/illustrations/Crowd_concert.jpg" alt="image d'une foule de concert">
     </div>
     <span class="vertical_line"></span>
 
@@ -59,14 +67,14 @@
                 </div>
 
                 <div id="user_type_area">
-                    <legend id="question2">Êtes-vous artiste?</legend>
+                    <label id="question2">Êtes-vous artiste?</label>
                     <div id="answers2">
                         <div>
-                            <input type="radio" name="artist" id="artist_yes" value="oui" required>
+                            <input type="radio" name="artist" id="artist_yes" value="1" required>
                             <label for="artist_yes">Oui</label>
                         </div>
                         <div>
-                            <input type="radio" name="artist" id="artist_no" value="non">
+                            <input type="radio" name="artist" id="artist_no" value="0" required>
                             <label for="artist_no">Non</label>
                         </div>
                     </div>
