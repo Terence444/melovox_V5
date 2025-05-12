@@ -72,7 +72,7 @@
         // Nettoyer les données de session
         unset($_SESSION['form_data']);
         // Rediriger l'utilisateur en fonction de ses réponses
-        if ($est_artiste == 1 && $partage_creations == 1) {
+        if ($est_artiste == 'oui' && $partage_creations == 'oui') {
             header("Location: ../10_site/10_espace_perso_artist.php");
             exit();
         } else {

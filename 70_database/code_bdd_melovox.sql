@@ -31,7 +31,7 @@ CREATE TABLE artistes (
     Mot_de_passe VARCHAR(255) NOT NULL,
     ID_Genre VARCHAR(255),
     Nationalite VARCHAR(255),
-    Bio TEXT,
+    biographie TEXT,
     Albums INT,
     EPs INT,
     Singles INT,

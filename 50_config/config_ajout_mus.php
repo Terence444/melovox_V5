@@ -15,7 +15,7 @@ if (isset($_SESSION['user_id'])) {
         // Gérer l'upload du fichier de musique
         if (isset($_FILES['fichier_musique']) && $_FILES['fichier_musique']['error'] === UPLOAD_ERR_OK) {
             // Créer un nom de fichier unique pour éviter les conflits
-            $chemin_fichier =__DIR__ . '/../80_imports/musiques' . uniqid() . '_' . basename($_FILES['fichier_musique']['name']);
+            $chemin_fichier = __DIR__ . '/../80_imports/musiques/' . uniqid() . '_' . basename($_FILES['fichier_musique']['name']);
 
             // Vérifier que le dossier existe, sinon le créer
             if (!is_dir(__DIR__ . '/../80_imports/musiques')) {

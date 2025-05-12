@@ -12,14 +12,13 @@ if (isset($_SESSION['user_id'])) {
      $utilisateur_id = $_SESSION['user_id'];
 
 // Récupérer les informations de l'utilisateur
-$sql = "SELECT u.nom, u.prenom, u.email, a.Bio as biographie, u.photo_profil
-        FROM utilisateurs u
-        LEFT JOIN artistes a ON u.id = a.Id_Artiste
-        WHERE u.id = ?";
+$sql = "SELECT nom, prenom, email, photo_profil 
+        FROM utilisateurs 
+        WHERE id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $utilisateur_id);
 $stmt->execute();
-$stmt->bind_result($nom, $prenom, $email, $biographie, $photo_profil);
+$stmt->bind_result($nom, $prenom, $email, $photo_profil);
 $stmt->fetch();
 $stmt->close();
     
