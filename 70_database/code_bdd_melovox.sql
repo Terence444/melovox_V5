@@ -23,7 +23,7 @@ CREATE TABLE utilisateurs (
 );
 
 CREATE TABLE artistes (
-    Id_Artiste INT AUTO_INCREMENT PRIMARY KEY,
+     INT AUTO_INCREMENT PRIMARY KEY,
     Nom VARCHAR(255),
     Prenom VARCHAR(255),
     Email VARCHAR(255),
@@ -47,7 +47,7 @@ CREATE TABLE Album (
     Genre VARCHAR(255),
     Date_de_sortie DATE,
     Artiste INT,
-    FOREIGN KEY (Artiste) REFERENCES Artiste(Id_Artiste),
+    FOREIGN KEY (Artiste) REFERENCES Artiste(id),
     Titre INT,
     FOREIGN KEY (Titre) REFERENCES Titre(Id_titre)
 );
@@ -60,7 +60,7 @@ CREATE TABLE EP (
     Genre VARCHAR(255),
     Date_de_sortie DATE,
     Artiste INT,
-    FOREIGN KEY (Artiste) REFERENCES Artiste(Id_Artiste),
+    FOREIGN KEY (Artiste) REFERENCES Artiste(id),
     Titre INT,
     FOREIGN KEY (Titre) REFERENCES Titre(Id_titre)
 );
@@ -73,7 +73,7 @@ CREATE TABLE Single (
     Genre VARCHAR(255),
     Date_de_sortie DATE,
     Artiste INT,
-    FOREIGN KEY (Artiste) REFERENCES Artiste(Id_Artiste),
+    FOREIGN KEY (Artiste) REFERENCES Artiste(id),
     Titre INT,
     FOREIGN KEY (Titre) REFERENCES Titre(Id_titre)
 );
@@ -91,7 +91,7 @@ CREATE TABLE Titre (
     FOREIGN KEY (Album) REFERENCES Album(Id_Album),
     FOREIGN KEY (EP) REFERENCES EP(Id_EP),
     FOREIGN KEY (Single) REFERENCES Single(Id_Single),
-    FOREIGN KEY (Artiste) REFERENCES Artiste(Id_Artiste)
+    FOREIGN KEY (Artiste) REFERENCES Artiste(id)
 );
 
 CREATE TABLE Playlist (
@@ -119,10 +119,10 @@ CREATE TABLE contact (
 CREATE TABLE abonnement (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_utilisateur INT NOT NULL,
-    id_artiste INT NOT NULL,
+    id INT NOT NULL,
     date_abonnement DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_utilisateur) REFERENCES utilisateurs(id),
-    FOREIGN KEY (id_artiste) REFERENCES Artiste(Id_Artiste)
+    FOREIGN KEY (id) REFERENCES Artiste(id)
 );
 
 CREATE TABLE Genre (
