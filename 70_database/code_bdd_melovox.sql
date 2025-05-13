@@ -23,7 +23,7 @@ CREATE TABLE utilisateurs (
 );
 
 CREATE TABLE artistes (
-     INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     Nom VARCHAR(255),
     Prenom VARCHAR(255),
     Email VARCHAR(255),
@@ -37,7 +37,6 @@ CREATE TABLE artistes (
     Singles INT,
     Nombre_abonnes INT
 );
-
 
 CREATE TABLE Album (
     Id_Album INT AUTO_INCREMENT PRIMARY KEY,
@@ -103,7 +102,7 @@ CREATE TABLE Playlist (
     Date_de_creation DATE,
     Id_titre INT,
     FOREIGN KEY (Id_titre) REFERENCES Titre(Id_titre),
-    FOREIGN KEY (Nom_Utilisateur) REFERENCES Utilisateur(Id_Utilisateur)
+    FOREIGN KEY (Nom_Utilisateur) REFERENCES utilisateurs(pseudo)
 );
 
 CREATE TABLE contact (
@@ -118,11 +117,10 @@ CREATE TABLE contact (
 
 CREATE TABLE abonnement (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_utilisateur INT NOT NULL,
-    id INT NOT NULL,
+    id_utilisateurs INT NOT NULL,
     date_abonnement DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_utilisateur) REFERENCES utilisateurs(id),
-    FOREIGN KEY (id) REFERENCES Artiste(id)
+    FOREIGN KEY (id_utilisateurs) REFERENCES utilisateurs(id),
+    FOREIGN KEY (id_utilisateurs) REFERENCES Artiste(id)
 );
 
 CREATE TABLE Genre (
@@ -136,10 +134,10 @@ CREATE TABLE Genre (
 
 CREATE TABLE Favoris (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_utilisateur INT NOT NULL,
+    id_utilisateurs INT NOT NULL,
     id_titre INT NOT NULL,
     Type_Favoris ENUM('Album', 'EP', 'Single', 'Playlist') NOT NULL,
     date_ajout DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_utilisateur) REFERENCES utilisateurs(id),
+    FOREIGN KEY (id_utilisateurs) REFERENCES utilisateurs(id),
     FOREIGN KEY (id_titre) REFERENCES Titre(Id_titre)
 );
