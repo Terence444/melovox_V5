@@ -14,7 +14,8 @@ if (isset($_SESSION['user_id'])) {
     // Récupérer les informations de l'utilisateur et de l'artiste
     $sql = "SELECT u.nom, u.prenom, u.email, a.biographie, u.photo_profil
             FROM utilisateurs u
-            LEFT JOIN artistes a ON u.id = a.id
+            -- LEFT JOIN artistes a ON u.id = a.id
+            LEFT JOIN artistes a ON u.id = a.Id_Artiste
             WHERE u.id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $utilisateur_id);
@@ -22,7 +23,6 @@ if (isset($_SESSION['user_id'])) {
     $stmt->bind_result($nom, $prenom, $email, $biographie, $photo_profil);
     $stmt->fetch();
     $stmt->close();
-    
 ?>
 
     <?php
