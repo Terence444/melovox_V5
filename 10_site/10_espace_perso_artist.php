@@ -80,7 +80,9 @@ if (isset($_SESSION['user_id'])) {
     }
     ?>
 
-    <section id="bio_artiste">
+    <section id="bio_artiste"> 
+
+    
         <h2>Ma biographie</h2>  
 
         <div id="bio">
@@ -95,7 +97,9 @@ if (isset($_SESSION['user_id'])) {
 
         <!-- Formulaire de modification de la biographie -->
         <form id="form_bio" action="../50_config/config_bio.php" method="post" style="display: none;">
-            <textarea name="biographie" rows="10" cols="50" required><?php echo htmlspecialchars($biographie); ?></textarea>
+            <!-- <textarea name="biographie" rows="10" cols="50" required><?php echo htmlspecialchars($biographie); ?></textarea> -->
+             <textarea name="biographie" rows="10" cols="50" required><?php echo !empty($biographie) ? htmlspecialchars($biographie) : ""; ?></textarea>
+            <br>
             <br>
             <div id="bio_button_area">
                 <input id="save_bio_button" type="submit" value="Enregistrer">
