@@ -15,7 +15,7 @@ if (isset($_SESSION['user_id'])) {
     $sql = "SELECT u.nom, u.prenom, u.email, a.biographie, u.photo_profil
             FROM utilisateurs u
             -- LEFT JOIN artistes a ON u.id = a.id
-            LEFT JOIN artistes a ON u.id = a.Id_Artiste
+            LEFT JOIN artistes a ON u.id = a.id
             WHERE u.id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $utilisateur_id);

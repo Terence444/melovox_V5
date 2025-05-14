@@ -67,7 +67,7 @@
 
         // Si l'utilisateur est un artiste, dupliquer ses informations dans la table artistes
         if ($est_artiste == 1) {
-            $sql = "INSERT INTO artistes (Id_Artiste, Nom, Prenom, Email, Mot_de_passe, Nationalite) VALUES (?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO artistes (id, Nom, Prenom, Email, Mot_de_passe, Nationalite) VALUES (?, ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("isssss", $last_user_id, $nom, $prenom, $email, $mot_de_passe, $pays);
             $stmt->execute();

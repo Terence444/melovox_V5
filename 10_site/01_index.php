@@ -72,32 +72,18 @@
 <!--------------------- Carrousel codepen --------------------->
     
 
-<div class="container">
-  <div class="carousel">
-    <div class="a">
-      <div class="item"><img src="../60_visuels/icon/users icons/lil_jordan.png" alt="Photo d'artiste"></div>
+    <div class="carousel-container">
+        <div class="carousel" id="carousel">
+            <!-- Les images seront ajoutées par JavaScript -->
+        </div>
+        <div class="carousel-nav">
+            <button class="nav-btn prev-btn">&lt;</button>
+            <button class="nav-btn next-btn">&gt;</button>
+        </div>
+        <div class="carousel-dots" id="carousel-dots">
+            <!-- Les points seront ajoutés par JavaScript -->
+        </div>
     </div>
-    <div class="b">
-      <div class="item"><img src="../60_visuels/icon/users icons/alexia.png" alt="Photo d'artiste"></div>
-    </div>
-    <div class="c">
-      <div class="item"><img src="../60_visuels/icon/users icons/Catalia.png" alt="Photo d'artiste"></div>
-    </div>
-    <div class="d">
-      <div class="item"><img src="../60_visuels/icon/users icons/charles.png" alt="Photo d'artiste"></div>
-    </div>
-    <div class="e">
-      <div class="item"><img src="../60_visuels/icon/users icons/DJ_alfonso.png" alt="Photo d'artiste"></div>
-    </div>
-    <div class="f">
-      <div class="item"><img src="../60_visuels/icon/users icons/Lorde.png" alt="Photo d'artiste"></div>
-    </div>
-
-  </div>
-</div>
-<div class="next">←</div>
-<div class="prev">→</div>
-
 
 </section>
 
