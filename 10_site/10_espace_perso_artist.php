@@ -137,64 +137,66 @@ if (isset($_SESSION['user_id'])) {
         </form>
     </section>
 
-    <section id="liste_musiques">
+<section id="liste_musiques">
     <h2>Mes titres en ligne</h2>
 
     <div id="les_musiques">
-     <?php
-// Récupérer la liste des titres de l'artiste
-$sql = "SELECT Id_titre, Nom, Duree, Genre, Date_de_sortie 
-        FROM Titre 
-        WHERE Artiste = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $utilisateur_id);
-$stmt->execute();
-$result = $stmt->get_result();
-
-// Vérifier s'il y a des titres
-if ($result->num_rows > 0) {
-    echo "<ul>";
-    while ($titre = $result->fetch_assoc()) {
-        echo "<li>";
-        echo "<strong>" . htmlspecialchars($titre['Nom']) . "</strong> ";
+    <?php
+  
+    // Requête pour récupérer les titres de l'artiste connecté
+    $sql_titres = "SELECT t.Id_titre, t.Nom, t.Genre, t.Date_de_sortie, t.chemin_fichier, a.Nom as nom_album 
+                  FROM Titre t 
+                  LEFT JOIN Album a ON t.Album = a.Id_Album 
+                  WHERE t.Artiste = ?
+                  ORDER BY t.Date_de_sortie DESC";
+    
+    $stmt_titres = $conn->prepare($sql_titres);
+    $stmt_titres->bind_param("i", $utilisateur_id);
+    $stmt_titres->execute();
+    $result_titres = $stmt_titres->get_result();
+    
+    if ($result_titres->num_rows > 0) {
+        echo '<table class="table_titres">
+                <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Album</th>
+                        <th>Genre</th>
+                        <th>Date de sortie</th>
+                        <th>Écouter</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>';
         
-        // Récupérer l'album associé à ce titre (si disponible)
-        $album_info = "";
-        $sql_album = "SELECT a.Nom FROM Album a
-                    INNER JOIN Titre t ON t.Album = a.Id_Album
-                    WHERE t.Id_titre = ?";
-        $stmt_album = $conn->prepare($sql_album);
-        $stmt_album->bind_param("i", $titre['Id_titre']);
-        $stmt_album->execute();
-        $result_album = $stmt_album->get_result();
-        if ($result_album->num_rows > 0) {
-            $album = $result_album->fetch_assoc();
-            $album_info = $album['Nom'];
+        while ($titre = $result_titres->fetch_assoc()) {
+            echo '<tr>
+                    <td>' . htmlspecialchars($titre['Nom']) . '</td>
+                    <td>' . (isset($titre['nom_album']) ? htmlspecialchars($titre['nom_album']) : 'Single') . '</td>
+                    <td>' . htmlspecialchars($titre['Genre']) . '</td>
+                    <td>' . htmlspecialchars($titre['Date_de_sortie']) . '</td>
+                    <td>
+                        <audio controls>
+                            <source src="' . htmlspecialchars($titre['chemin_fichier']) . '" type="audio/mpeg">
+                            Votre navigateur ne supporte pas la lecture audio.
+                        </audio>
+                    </td>
+                    <td>
+                        <form action="../50_config/supp_mus.php" method="post" onsubmit="return confirm(\'Êtes-vous sûr de vouloir supprimer ce titre ?\');">
+                            <input type="hidden" name="titre_id" value="' . $titre['Id_titre'] . '">
+                            <button type="submit" class="btn-supprimer">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>';
         }
-        $stmt_album->close();
         
-        echo " <br>Album : " . htmlspecialchars($album_info);
-        echo " <br>Genre : " . htmlspecialchars($titre['Genre']);
-        echo " <br>Date de sortie : " . htmlspecialchars($titre['Date_de_sortie']);
-        
-        // Vous n'avez pas de champ pour stocker le chemin du fichier audio dans la table Titre
-        // Si vous souhaitez ajouter cette fonctionnalité, il faudra modifier le schéma de la base de données
-        
-        // Formulaire pour supprimer le titre
-        echo "<br>
-        <form action='../50_config/supp_titre.php' method='post'>
-            <input type='hidden' name='titre_id' value='" . htmlspecialchars($titre['Id_titre']) . "'>
-            <input type='submit' value='Supprimer' style='background-color: #ff4d4d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;'>
-        </form>";
-        
-        echo "</li>";
+        echo '</tbody></table>';
+    } else {
+        echo '<p>Vous n\'avez pas encore importé de titres.</p>';
     }
-    echo "</ul>";
-} else {
-    echo "<p>Vous n'avez pas encore de titres enregistrés.</p>";
-}
-$stmt->close();
-?>
+    
+    $stmt_titres->close();
+    ?>
     </div>
 </section>
 
@@ -210,14 +212,25 @@ $stmt->close();
         require "../20_includes/footer.php";
     ?>
 
-    <?php
-// Après l'ouverture de la session et avant d'afficher le contenu
+<?php
+// Afficher les messages concernant l'import/suppression de musique
 if (isset($_SESSION['import_success'])) {
     echo "<p class='success-message'>" . $_SESSION['import_success'] . "</p>";
     unset($_SESSION['import_success']);
 }
+if (isset($_SESSION['import_error'])) {
+    echo "<p class='error-message'>" . $_SESSION['import_error'] . "</p>";
+    unset($_SESSION['import_error']);
+}
+if (isset($_SESSION['delete_success'])) {
+    echo "<p class='success-message'>" . $_SESSION['delete_success'] . "</p>";
+    unset($_SESSION['delete_success']);
+}
+if (isset($_SESSION['delete_error'])) {
+    echo "<p class='error-message'>" . $_SESSION['delete_error'] . "</p>";
+    unset($_SESSION['delete_error']);
+}
 ?>
-
 <script>
     document.getElementById('modifier_bio_btn').addEventListener('click', function() {
         document.getElementById('form_bio').style.display = 'block';

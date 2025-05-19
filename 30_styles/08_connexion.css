@@ -3,6 +3,8 @@
       color: #ffffff;
     }
   }
+
+  
 /*---------- Section : Espace de connexion ------------*/
 section{
     width: 90%;
@@ -173,4 +175,97 @@ form h1{
 
 form p{
     font-family: "Josefin Sans", serif;   
+}
+
+/* Styles pour la version mobile */
+@media screen and (max-width: 600px) {
+    /* Header styling for mobile will be handled by header.php */
+    
+    section {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        margin-top: 50px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .vertical_line {
+        display: none;
+    }
+
+    #image_area {
+        display: none;
+    }
+
+    #image {
+        display: none;
+    }
+
+    .logo-text {
+        font-size: 24px;
+        color: #fac94c;
+        margin-bottom: 20px;
+    }
+
+    #form_area {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    form h1 {
+        font-size: 16pt;
+        margin-bottom: 15px;
+    }
+
+    #email_area, #password_area {
+        width: 90%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    #email_area label, #password_area label {
+        margin-bottom: 5px;
+        font-size: 14pt;
+    }
+
+    #email, #password {
+        width: 100%;
+        height: 40px;
+        padding: 0 10px;
+        border-radius: 5px;
+    }
+
+    #password_area a {
+        font-size: 12pt;
+        text-align: right;
+        margin-top: 3px;
+    }
+
+    #checkbox {
+        width: 90%;
+        margin: 10px 0;
+        font-size: 12pt;
+    }
+
+    #connect {
+        width: 150px;
+        height: 40px;
+        border-radius: 25px;
+        font-size: 14pt;
+        background-color: #FAC94C;
+    }
+
+    form p {
+        font-size: 12pt;
+        margin-top: 10px;
+    }
 }
