@@ -2,6 +2,10 @@
 include "../70_database/connex_bdd.php";
 session_start();
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if (isset($_SESSION['user_id'])) {
     $utilisateur_id = $_SESSION['user_id'];
 
@@ -25,7 +29,7 @@ if (isset($_SESSION['user_id'])) {
             // Déplacer le fichier téléchargé vers le dossier de destination
             if (move_uploaded_file($_FILES['fichier_musique']['tmp_name'], $chemin_fichier)) {
                 // Préparer et exécuter la requête d'insertion
-                $sql = "INSERT INTO musique (utilisateur_id, titre, artiste, album, genre, chemin_fichier)
+                $sql = "INSERT INTO titre (utilisateur_id, titre, artiste, album, genre, chemin_fichier)
                 VALUES (?, ?, ?, ?, ?, ?)";
 
                 $stmt = $conn->prepare($sql);
@@ -57,5 +61,3 @@ if (isset($_SESSION['user_id'])) {
 
 $conn->close();
 ?>
-
-fichiers_config/uploads/musique
