@@ -1,3 +1,4 @@
+/* CSS pour la nouvelle structure du header */
 body {
     margin: 0;
     background: linear-gradient(150deg , #EF9050 7%,#323AC2 22%,#A249C3 40%,#323AC2 73%,#14B8F6 87%);
@@ -57,30 +58,43 @@ header h1{
     gap: 10px;
 }
 
-#search_connex a,
-#search_connex span{
+/* Nouveaux styles pour les divs séparées */
+.left_elements {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu_container {
+    display: flex;
+    align-items: center;
+}
+
+.search_icon {
+    display: flex;
+    align-items: center;
+}
+
+.search_icon a,
+.search_icon span {
     font-size: 35pt;
     color: white;
     display: flex;
     text-decoration: none;
 }
 
-#burger{
-    width: 40px;
-    height: 40px;
+.auth_buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
 }
-  
-  #burger span{
-    border-radius: 5px;
-    border: 3px solid #fff;
-    display: block;
-    margin: 7px 2px;
+
+.connexion_btn, .inscription_btn {
+    display: flex;
+    align-items: center;
 }
-  
-  #burger:hover span{
-    padding:1px;
-    margin:3px 0px;
-}
+
 #vertical_line{
     display: inline-block;
     border-left: 5px solid #ccc;
@@ -88,7 +102,6 @@ header h1{
     height: 50px;
     margin-left: 6px;
     border-radius: 20px;
-
 }
 
 header button{
@@ -104,32 +117,97 @@ header button{
     top: 150px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
+    header {
+        width: 100%;
+        height: auto;
+        padding: 15px 0;
+        flex-direction: column;
+    }
     
-header {
-    width: 100%;
+    #logo_title {
+        margin-top: 10px;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    #logo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    header h1 {
+        font-size: 40pt;
+    }
+    
+    #search_connex {
+        width: 90%;
+        margin-top: 20px;
+        justify-content: space-between;
+    }
+    
+    /* Ajustements responsive pour les nouveaux éléments */
+    .auth_buttons {
+        gap: 2px;
+    }
+    
+    /* Assurer que left_elements reste aligné à gauche */
+    .left_elements {
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        padding: 10px 0;
+    }
+    
+    #logo_title {
+        flex-direction: row;
+        margin-top: 5px;
+    }
+    
+    #logo {
+        width: 80px;
+        height: 80px;
+    }
+    
+    header h1 {
+        font-size: 24pt;
+    }
+    
+    #search_connex {
+        width: 90%;
+        padding: 0 15px;
+        justify-content: space-between;
+    }
+    
+    .search_icon a,
+    .search_icon span {
+        font-size: 24pt;
+    }
+    
+    header button {
+        width: 90px;
+        height: 34px;
+        font-size: 14px;
+    }
+    
+    #vertical_line {
+        display: none !important;
+    }
+    
+    /* Assurer que l'icône de recherche reste à côté du menu en mobile */
+    .left_elements {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .auth_buttons {
+    gap: 15px;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
     align-items: center;
-    flex-direction: column;
-}
-
-#logo_title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 30px;
-  align-items: center;
-  height: 100%;
-}
-
-header h1 {
-  font-size: 139%;
-  rotate: -2.04deg;
-  font-family: "Rock Salt", serif;
-  font-weight: 400;
-  color: #FAC94C;
-  margin: 0;
 }
 }
