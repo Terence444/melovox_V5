@@ -1,171 +1,136 @@
-*{
-    a:visited {
-      color: #ffffff;
-    }
-  }
+/* Reset et styles de base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-  
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #ffffff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 /*---------- Section : Espace de connexion ------------*/
-section{
+section {
     width: 90%;
+    max-width: 1200px;
     display: flex;
     flex-direction: row;
-    margin-top: 50px;
+    margin: 50px auto;
     align-items: center;
     justify-content: center;
 }
 
-#image_area{
+#image_area {
     width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#image{
+#image {
     width: 70%;
+    max-width: 400px;
     border-radius: 50%;
 }
-.vertical_line{
+
+.vertical_line {
     display: inline-block;
     border-left: 1px solid #ffffff;
-    margin:30px;
-    height: 600px; 
+    margin: 0 30px;
+    height: 600px;
 }
 
-/* #fast_signin{
-    width: 55%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 33px;
-}
-
-#fast_signin h3{
-    font-family: "Josefin Sans", serif;
-    font-size: 25pt;
-    color: white;
-}
-
-#fast_signin p{
-    font-family: "Josefin Sans", serif;
-    font-size: 15pt;
-    color: white;
-}
-
-#button_icon{
-    background-color: #FAC94C;
-    width: 357px;
-    height: 60px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-#button_icon button{
-    background: none;
-    border: none;
-}
-.social_network{
-    width: 50px;
-    height: 50px;
-} 
-
-#decorative_line{
-    width: 57%;
-}*/
-
-#form_area{
+#form_area {
     width: 50%;
 }
-form{
+
+form {
     width: 100%;
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 50px;
+    gap: 30px;
 }
 
-form h1{
+form h1 {
     font-family: "Josefin Sans", serif;
-    font-size: 25pt;
+    font-size: clamp(18pt, 4vw, 25pt);
     color: white;
     text-align: center;
+    margin-bottom: 15px;
 }
-#email_area{
-    width: 57%;
-    height: 70px;
-    border: none;
-    border-radius: 15px;
-    font-family: "Josefin Sans", serif;
-    font-size: 17pt;
+
+#email_area, #password_area {
+    width: 90%;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     text-align: left;
-  }
-#email{
-    width: 100%;
-    height: 50%;
-    border: none;
-    border-radius: 15px;
-    font-family: "Josefin Sans", serif;
-    font-size: 14pt;
 }
 
-#password_area{
-    width: 57%;
-    height: 90px;
-    border: none;
-    border-radius: 15px;
+#email_area label, #password_area label {
     font-family: "Josefin Sans", serif;
-    font-size: 17pt;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-  }
-
-#password{
-    width: 100%;
-    height: 35px;
-    border: none;
-    border-radius: 15px;
-    font-family: "Josefin Sans", serif;
-    font-size: 14pt;
+    font-size: clamp(14pt, 3vw, 17pt);
+    margin-bottom: 8px;
+    color: white;
 }
 
-#password_area a{
-    font-size: 15pt;
+#email, #password {
+    width: 100%;
+    height: auto;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 15px;
+    font-family: "Josefin Sans", serif;
+    font-size: clamp(12pt, 2vw, 14pt);
+}
+
+#password_area a {
+    font-size: clamp(12pt, 2vw, 15pt);
     text-align: right;
+    margin-top: 8px;
+    font-family: "Josefin sans",serif;
 }
 
-#checkbox{
+#checkbox {
     font-family: "Josefin Sans", serif;
-    font-size: 14pt;
+    font-size: clamp(12pt, 2vw, 14pt);
     display: flex;
     align-items: center;
-    width: 359px;
+    gap: 8px;
+    width: 90%;
+    max-width: 400px;
+    color: white;
 }
 
-#connect{
-
+#connect {
     width: 200px;
     height: 50px;
     border: none;
     border-radius: 15px;
     background-color: #FAC94C;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Josefin Sans', serif;
     font-size: 16pt;
     cursor: pointer;
-    
+    transition: background-color 0.3s ease;
 }
 
-#sign_in{
+#connect:hover {
+    background-color: #e8b73b;
+}
+
+#sign_in {
     font-family: "Josefin Sans", serif;
-    font-size: 14pt;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -173,102 +138,86 @@ form h1{
     justify-content: center;
 }
 
-form p{
-    font-family: "Josefin Sans", serif;   
+form p {
+    font-family: "Josefin Sans", serif;
+    font-size: clamp(12pt, 2vw, 14pt);
+    text-align: center;
+    color: white;
 }
 
-<<<<<<< HEAD
-=======
 /* Styles pour la version mobile */
 @media screen and (max-width: 600px) {
     /* Header styling for mobile will be handled by header.php */
     
     section {
-        width: 90%;
-        display: flex;
-        flex-direction: row;
-        margin-top: 50px;
-        align-items: center;
-        justify-content: center;
+        width: 95%;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    #image_area {
+        width: 70%;
+        margin-bottom: 20px;
     }
 
     .vertical_line {
         display: none;
     }
 
+    #form_area {
+        width: 80%;
+    }
+
+    form {
+        gap: 20px;
+    }
+}
+
+/* Smartphones */
+@media screen and (max-width: 600px) {
+    section {
+        width: 100%;
+        margin-top: 20px;
+        padding: 0 15px;
+    }
+
     #image_area {
         display: none;
     }
 
-    #image {
-        display: none;
-    }
-
-    .logo-text {
-        font-size: 24px;
-        color: #fac94c;
-        margin-bottom: 20px;
-    }
-
     #form_area {
         width: 100%;
-        padding: 0 20px;
-    }
-
-    form {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
     }
 
     form h1 {
-        font-size: 16pt;
-        margin-bottom: 15px;
+        font-size: 11pt;
+        margin-top: 24px;
     }
 
     #email_area, #password_area {
-        width: 90%;
-        height: auto;
-        margin-bottom: 10px;
+        width: 100%;
     }
 
     #email_area label, #password_area label {
-        margin-bottom: 5px;
         font-size: 14pt;
-    }
-
-    #email, #password {
-        width: 100%;
-        height: 40px;
-        padding: 0 10px;
-        border-radius: 5px;
     }
 
     #password_area a {
         font-size: 12pt;
-        text-align: right;
-        margin-top: 3px;
     }
 
     #checkbox {
-        width: 90%;
-        margin: 10px 0;
+        width: 100%;
         font-size: 12pt;
     }
 
     #connect {
         width: 150px;
-        height: 40px;
-        border-radius: 25px;
+        height: 45px;
         font-size: 14pt;
-        background-color: #FAC94C;
     }
 
     form p {
         font-size: 12pt;
-        margin-top: 10px;
     }
 }
->>>>>>> 6c74a48d9479d6d4d249178c96503e99d8367c7b

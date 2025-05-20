@@ -78,33 +78,50 @@
         $is_connected = isset($_SESSION['user_id']); // Vérifier si l'utilisateur est connecté
     ?>
 
-    <header>
-        <div id="logo_title">
-            <a href="01_index.php"><img id="logo" src="../60_visuels\logo\logo.png" alt=""></a>
-            <h1>Mélovox</h1>
-        </div>
-        <div id="search_connex">
-            <div class="wrapMenu">
-                <div class="menu menu--top-right" id="menu_top_right">
-                    <a class="menu__btn" dd-nav-expand="menu_top_right"><img src="../60_visuels\icon\menu_hamburger.png" alt=""></a>
-                    <ul class="menu__list">
-                        <li><a href="01_index.php">Accueil</a></li>
-                        <li><a href="09_contactform.php">Contact</a></li>
-                        <li><a href="03_gallery.php">Galerie</a></li>
-                        <li><a href="11_espace_perso_user.php">Mon espace</a></li>
-                    </ul>
+   <header>
+    <div id="logo_title">
+        <a href="01_index.php"><img id="logo" src="../60_visuels\logo\logo.png" alt=""></a>
+        <h1>Mélovox</h1>
+    </div>
+    <div id="search_connex">
+        <!-- Conteneur pour le menu et la recherche (alignés à gauche) -->
+        <div class="left_elements">
+            <!-- Div distincte pour le menu hamburger -->
+            <div class="menu_container">
+                <div class="wrapMenu">
+                    <div class="menu menu--top-right" id="menu_top_right">
+                        <a class="menu__btn" dd-nav-expand="menu_top_right"><img src="../60_visuels\icon\menu_hamburger.png" alt=""></a>
+                        <ul class="menu__list">
+                            <li><a href="01_index.php">Accueil</a></li>
+                            <li><a href="09_contactform.php">Contact</a></li>
+                            <li><a href="03_gallery.php">Galerie</a></li>
+                            <li><a href="11_espace_perso_user.php">Mon espace</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
-            <a href="02_search.php"><span class="material-symbols-outlined">search</span></a>
+            
+            <!-- Div distincte pour l'icône de recherche -->
+            <div class="search_icon">
+                <a href="02_search.php"><span class="material-symbols-outlined">search</span></a>
+            </div>
+        </div>
+        
+        <!-- Div distincte pour les boutons de connexion/déconnexion -->
+        <div class="auth_buttons">
             <?php if ($is_connected) : ?>
                 <!-- Afficher le bouton de déconnexion si l'utilisateur est connecté -->
                 <a href="../50_config/deconnexion.php"><button>Déconnexion</button></a>
             <?php else : ?>
                 <!-- Afficher les boutons de connexion et d'inscription si l'utilisateur n'est pas connecté -->
-                <a href="08_connexion.php"><button>Connexion</button></a>
+                <div class="connexion_btn">
+                    <a href="08_connexion.php"><button>Connexion</button></a>
+                </div>
                 <span id="vertical_line"></span>
-                <a href="07_inscription.php"><button>Inscription</button></a>
+                <div class="inscription_btn">
+                    <a href="07_inscription.php"><button>Inscription</button></a>
+                </div>
             <?php endif; ?>
         </div>
-    </header>
+    </div>
+</header>
