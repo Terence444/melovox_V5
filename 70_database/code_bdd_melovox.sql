@@ -32,10 +32,10 @@ CREATE TABLE artistes (
     ID_Genre VARCHAR(255),
     Nationalite VARCHAR(255),
     biographie TEXT,
-    Albums INT,
-    EPs INT,
-    Singles INT,
-    Nombre_abonnes INT
+    Albums INT DEFAULT 0,
+    EPs INT DEFAULT 0,
+    Singles INT DEFAULT 0,
+    Nombre_abonnes INT DEFAULT 0
 );
 
 CREATE TABLE Album (
@@ -79,30 +79,25 @@ CREATE TABLE Single (
 
 CREATE TABLE Titre (
     Id_titre INT AUTO_INCREMENT PRIMARY KEY,
-    Nom VARCHAR(255),
+    Nom VARCHAR(255) NOT NULL,
     Duree TIME,
-    Album INT,
-    EP INT,
-    Single INT,
     Genre VARCHAR(255),
-    Date_de_sortie DATE,
+    Date_de_sortie DATE DEFAULT CURRENT_DATE,
     Artiste INT,
-    FOREIGN KEY (Album) REFERENCES Album(Id_Album),
-    FOREIGN KEY (EP) REFERENCES EP(Id_EP),
-    FOREIGN KEY (Single) REFERENCES Single(Id_Single),
-    FOREIGN KEY (Artiste) REFERENCES Artiste(id)
+    chemin_fichier VARCHAR(255) NOT NULL,
+    FOREIGN KEY (Artiste) REFERENCES artistes(id) ON DELETE CASCADE
 );
 
 CREATE TABLE Playlist (
     Id_Playlist INT AUTO_INCREMENT PRIMARY KEY,
-    Nom VARCHAR(255),
-    Nom_Utilisateur VARCHAR(100),
+    Nom VARCHAR(255) NOT NULL,
+    id_utilisateur INT NOT NULL,
     Duree TIME,
     Nombre_de_titre INT,
     Date_de_creation DATE,
     Id_titre INT,
     FOREIGN KEY (Id_titre) REFERENCES Titre(Id_titre),
-    FOREIGN KEY (Nom_Utilisateur) REFERENCES utilisateurs(pseudo)
+    FOREIGN KEY (Nom_Utilisateur) REFERENCES Utilisateur(Id_Utilisateur)
 );
 
 CREATE TABLE contact (
@@ -117,27 +112,28 @@ CREATE TABLE contact (
 
 CREATE TABLE abonnement (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_utilisateurs INT NOT NULL,
+    id_utilisateur INT NOT NULL,
+    id INT NOT NULL,
     date_abonnement DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_utilisateurs) REFERENCES utilisateurs(id),
-    FOREIGN KEY (id_utilisateurs) REFERENCES Artiste(id)
+    FOREIGN KEY (id_utilisateur) REFERENCES utilisateurs(id),
+    FOREIGN KEY (id) REFERENCES Artiste(id)
 );
 
 CREATE TABLE Genre (
     Id_Genre INT AUTO_INCREMENT PRIMARY KEY,
     Nom VARCHAR(255),
-    Nombre_de_titre INT,
-    Nombre_albums INT,
-    Nombre_d_EP INT,
-    Nombre_de_single INT
+    Nombre_de_titre INT DEFAULT 0,
+    Nombre_albums INT DEFAULT 0,
+    Nombre_d_EP INT DEFAULT 0,
+    Nombre_de_single INT DEFAULT 0
 );
 
 CREATE TABLE Favoris (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_utilisateurs INT NOT NULL,
+    id_utilisateur INT NOT NULL,
     id_titre INT NOT NULL,
     Type_Favoris ENUM('Album', 'EP', 'Single', 'Playlist') NOT NULL,
     date_ajout DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_utilisateurs) REFERENCES utilisateurs(id),
+    FOREIGN KEY (id_utilisateur) REFERENCES utilisateurs(id),
     FOREIGN KEY (id_titre) REFERENCES Titre(Id_titre)
 );
