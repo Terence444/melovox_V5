@@ -1,6 +1,6 @@
-CREATE DATABASE Melovox2;
+CREATE DATABASE Melovox3;
 
-USE Melovox2;
+USE Melovox3;
 
 CREATE TABLE utilisateurs (
     id INT AUTO_INCREMENT PRIMARY KEY,

@@ -14,13 +14,7 @@ if (isset($_SESSION['user_id'])) {
     // Récupérer les informations de l'utilisateur et de l'artiste
     $sql = "SELECT u.nom, u.prenom, u.email, a.biographie, u.photo_profil
             FROM utilisateurs u
-<<<<<<< HEAD
-            LEFT JOIN artistes a ON u.id = a.id
-            -- LEFT JOIN artistes a ON u.id = a.Id_Artiste
-=======
-            -- LEFT JOIN artistes a ON u.id = a.id
-            LEFT JOIN artistes a ON u.id = a.id
->>>>>>> 18943ed0bcd4ac34d98ec5a3db0971654bfda564
+            LEFT JOIN artistes a ON u.id = a.id  -- ou LEFT JOIN artistes a ON u.id = a.Id_Artiste
             WHERE u.id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $utilisateur_id);
@@ -33,7 +27,7 @@ if (isset($_SESSION['user_id'])) {
     <?php
     // Chemin URL pour le navigateur
     $chemin_image = '../80_imports/user_profile/' . $photo_profil;
-    
+
     // Chemin complet du serveur pour vérifier si le fichier existe
     $chemin_fichier = $_SERVER['DOCUMENT_ROOT'] . str_replace('..', '', $chemin_image);
     ?>
@@ -85,10 +79,10 @@ if (isset($_SESSION['user_id'])) {
     }
     ?>
 
-    <section id="bio_artiste"> 
+    <section id="bio_artiste">
 
-    
-        <h2>Ma biographie</h2>  
+
+        <h2>Ma biographie</h2>
 
         <div id="bio">
             <?php if ($biographie): ?>
@@ -103,7 +97,7 @@ if (isset($_SESSION['user_id'])) {
         <!-- Formulaire de modification de la biographie -->
         <form id="form_bio" action="../50_config/config_bio.php" method="post" style="display: none;">
             <!-- <textarea name="biographie" rows="10" cols="50" required><?php echo htmlspecialchars($biographie); ?></textarea> -->
-             <textarea name="biographie" rows="10" cols="50" required><?php echo !empty($biographie) ? htmlspecialchars($biographie) : ""; ?></textarea>
+            <textarea name="biographie" rows="10" cols="50" required><?php echo !empty($biographie) ? htmlspecialchars($biographie) : ""; ?></textarea>
             <br>
             <br>
             <div id="bio_button_area">
@@ -113,27 +107,34 @@ if (isset($_SESSION['user_id'])) {
         </form>
     </section>
 
-   <section id="import_musique">
+    <section id="import_musique">
         <h2>Déposer de nouveaux titres</h2>
         <form action="../50_config/config_ajout_mus.php" method="post" enctype="multipart/form-data">
             <div>
-                <label for="titre">Titre</label>
+                <label for="titre">Nom du titre</label>
                 <input type="text" id="titre" name="titre" required>
             </div>
             <div>
-                <label for="artiste">Artiste</label>
-                <input type="text" id="artiste" name="artiste" required>
+                <label for="titre">Durée</label>
+                <input type="text" id="titre" name="titre" required>
             </div>
             <div>
-                <label for="album">Album</label>
-                <input type="text" id="album" name="album">
+                <label for="album">Type de discographie</label>
+                <input type="radio" id="album" name="album" value="Album" required> Album
+                <input type="radio" id="EP" name="EP" value="EP" required> EP
+                <input type="radio" id="single" name="single" value="Single" required> Single
+                <input type="text" id="intiule" name="intiule" required> Intitulé de la discographie   
             </div>
+    
             <div>
                 <label for="genre">Genre</label>
                 <input type="text" id="genre" name="genre">
             </div>
             <div>
-                <label for="fichier_musique">Fichier Musique</label>
+                <label for="date_sortie">Date de sortie</label>
+                <input type="date" id="date_sortie" name="date_sortie" required>
+            <div>
+                <label for="fichier_musique">Votre fichier</label>
                 <input type="file" id="fichier_musique" name="fichier_musique" accept="audio/*" required>
             </div>
             <div>
@@ -143,79 +144,79 @@ if (isset($_SESSION['user_id'])) {
     </section>
 
     <section id="liste_musiques">
-    <h2>Mes titres en ligne</h2>
+        <h2>Mes titres en ligne</h2>
 
-    <div id="les_musiques">
-     <?php
-// Récupérer la liste des titres de l'artiste
-$sql = "SELECT Id_titre, Nom, Duree, Genre, Date_de_sortie 
+        <div id="les_musiques">
+            <?php
+            // Récupérer la liste des titres de l'artiste
+            $sql = "SELECT Id_titre, Nom, Duree, Genre, Date_de_sortie 
         FROM Titre 
         WHERE Artiste = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $utilisateur_id);
-$stmt->execute();
-$result = $stmt->get_result();
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("i", $utilisateur_id);
+            $stmt->execute();
+            $result = $stmt->get_result();
 
-// Vérifier s'il y a des titres
-if ($result->num_rows > 0) {
-    echo "<ul>";
-    while ($titre = $result->fetch_assoc()) {
-        echo "<li>";
-        echo "<strong>" . htmlspecialchars($titre['Nom']) . "</strong> ";
-        
-        // Récupérer l'album associé à ce titre (si disponible)
-        $album_info = "";
-        $sql_album = "SELECT a.Nom FROM Album a
+            // Vérifier s'il y a des titres
+            if ($result->num_rows > 0) {
+                echo "<ul>";
+                while ($titre = $result->fetch_assoc()) {
+                    echo "<li>";
+                    echo "<strong>" . htmlspecialchars($titre['Nom']) . "</strong> ";
+
+                    // Récupérer l'album associé à ce titre (si disponible)
+                    $album_info = "";
+                    $sql_album = "SELECT a.Nom FROM Album a
                     INNER JOIN Titre t ON t.Album = a.Id_Album
                     WHERE t.Id_titre = ?";
-        $stmt_album = $conn->prepare($sql_album);
-        $stmt_album->bind_param("i", $titre['Id_titre']);
-        $stmt_album->execute();
-        $result_album = $stmt_album->get_result();
-        if ($result_album->num_rows > 0) {
-            $album = $result_album->fetch_assoc();
-            $album_info = $album['Nom'];
-        }
-        $stmt_album->close();
-        
-        echo " <br>Album : " . htmlspecialchars($album_info);
-        echo " <br>Genre : " . htmlspecialchars($titre['Genre']);
-        echo " <br>Date de sortie : " . htmlspecialchars($titre['Date_de_sortie']);
-        
-        // Vous n'avez pas de champ pour stocker le chemin du fichier audio dans la table Titre
-        // Si vous souhaitez ajouter cette fonctionnalité, il faudra modifier le schéma de la base de données
-        
-        // Formulaire pour supprimer le titre
-        echo "<br>
+                    $stmt_album = $conn->prepare($sql_album);
+                    $stmt_album->bind_param("i", $titre['Id_titre']);
+                    $stmt_album->execute();
+                    $result_album = $stmt_album->get_result();
+                    if ($result_album->num_rows > 0) {
+                        $album = $result_album->fetch_assoc();
+                        $album_info = $album['Nom'];
+                    }
+                    $stmt_album->close();
+
+                    echo " <br>Album : " . htmlspecialchars($album_info);
+                    echo " <br>Genre : " . htmlspecialchars($titre['Genre']);
+                    echo " <br>Date de sortie : " . htmlspecialchars($titre['Date_de_sortie']);
+
+                    // Vous n'avez pas de champ pour stocker le chemin du fichier audio dans la table Titre
+                    // Si vous souhaitez ajouter cette fonctionnalité, il faudra modifier le schéma de la base de données
+
+                    // Formulaire pour supprimer le titre
+                    echo "<br>
         <form action='../50_config/supp_titre.php' method='post'>
             <input type='hidden' name='titre_id' value='" . htmlspecialchars($titre['Id_titre']) . "'>
             <input type='submit' value='Supprimer' style='background-color: #ff4d4d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;'>
         </form>";
-        
-        echo "</li>";
-    }
-    echo "</ul>";
+
+                    echo "</li>";
+                }
+                echo "</ul>";
+            } else {
+                echo "<p>Vous n'avez pas encore de titres enregistrés.</p>";
+            }
+            $stmt->close();
+            ?>
+        </div>
+    </section>
+
+
+
+<?php
 } else {
-    echo "<p>Vous n'avez pas encore de titres enregistrés.</p>";
+    // Rediriger l'utilisateur vers la page de connexion s'il n'est pas connecté ou pas artiste
+    header("Location: ../10_site/08_connexion.php");
+    exit();
 }
-$stmt->close();
+
+require "../20_includes/footer.php";
 ?>
-    </div>
-</section>
 
-
-
-    <?php
-        } else {
-            // Rediriger l'utilisateur vers la page de connexion s'il n'est pas connecté ou pas artiste
-            header("Location: ../10_site/08_connexion.php");
-            exit();
-        }
-
-        require "../20_includes/footer.php";
-    ?>
-
-    <?php
+<?php
 // Après l'ouverture de la session et avant d'afficher le contenu
 if (isset($_SESSION['import_success'])) {
     echo "<p class='success-message'>" . $_SESSION['import_success'] . "</p>";
