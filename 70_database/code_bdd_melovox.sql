@@ -79,13 +79,18 @@ CREATE TABLE Single (
 
 CREATE TABLE Titre (
     Id_titre INT AUTO_INCREMENT PRIMARY KEY,
-    Nom VARCHAR(255) NOT NULL,
+    Nom VARCHAR(255),
     Duree TIME,
+    Album INT,
+    EP INT,
+    Single INT,
     Genre VARCHAR(255),
-    Date_de_sortie DATE DEFAULT CURRENT_DATE,
+    Date_de_sortie DATE,
     Artiste INT,
-    chemin_fichier VARCHAR(255) NOT NULL,
-    FOREIGN KEY (Artiste) REFERENCES artistes(id) ON DELETE CASCADE
+    FOREIGN KEY (Album) REFERENCES Album(Id_Album),
+    FOREIGN KEY (EP) REFERENCES EP(Id_EP),
+    FOREIGN KEY (Single) REFERENCES Single(Id_Single),
+    FOREIGN KEY (Artiste) REFERENCES Artiste(id)
 );
 
 CREATE TABLE Playlist (

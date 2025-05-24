@@ -27,7 +27,7 @@
 
 .symbols{
     font-family: "Josefin Slab", serif;
-    font-size: 50px;
+    font-size: 25px;
     font-weight: bold;
     color: black;
 }
@@ -35,7 +35,7 @@
     color: white;
     font-family: "Josefin Sans", serif;
     letter-spacing: 10%;
-    font-size: 22pt;
+    font-size: 12pt;
     text-align: center;
 }
 
@@ -253,8 +253,10 @@
             align-items: center;
             cursor: pointer;
             font-size: 24px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgb(23, 208, 164);
             transition: all 0.3s ease;
+            margin-left: 10px;
+            margin-right: 10px;
         }
         
         .nav-btn:hover {
