@@ -2,7 +2,6 @@
 include "../70_database/connex_bdd.php";
 session_start();
 
-<<<<<<< HEAD
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -56,9 +55,7 @@ if (isset($_SESSION['user_id'])) {
         }
     }
 } else {
-=======
 if (!isset($_SESSION['user_id'])) {
->>>>>>> 6c74a48d9479d6d4d249178c96503e99d8367c7b
     header("Location: ../10_site/08_connexion.php");
     exit();
 }
