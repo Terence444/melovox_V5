@@ -60,10 +60,8 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-<<<<<<< HEAD
 $conn->close();
 ?>
-=======
 $utilisateur_id = $_SESSION['user_id'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -214,4 +212,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 $conn->close();
 ?>
->>>>>>> 6c74a48d9479d6d4d249178c96503e99d8367c7b
