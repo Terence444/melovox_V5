@@ -23,6 +23,10 @@
         <div id="form_area">  
             <form action="../50_config/config_connex.php" method="post">
                 <h1>Veuillez renseigner les champs pour vous connecter !</h1>
+                <!-- Image uniquement visible en mobile -->
+        <div id="mobile_image_area" style="display: none;" >
+            <img id="mobile_image"  src="../60_visuels/illustrations/social_music_network_2.jpg" alt="Réseau de sphère bleu et blanche contenant des notes de musique">
+        </div>
                 <div id="email_area">
                     <label for="email">Adresse Email</label>
                     <input type="text" id="email" name="email" required>

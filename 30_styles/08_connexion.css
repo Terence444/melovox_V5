@@ -1,4 +1,15 @@
 /* Reset et styles de base */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -24,10 +35,12 @@ section {
     max-width: 1200px;
     display: flex;
     flex-direction: row;
-    margin: 50px auto;
     align-items: center;
     justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
+
 
 #image_area {
     width: 50%;
@@ -45,7 +58,6 @@ section {
 .vertical_line {
     display: inline-block;
     border-left: 1px solid #ffffff;
-    margin: 0 30px;
     height: 600px;
 }
 
@@ -69,6 +81,7 @@ form h1 {
     text-align: center;
     margin-bottom: 15px;
 }
+
 
 #email_area, #password_area {
     width: 90%;
@@ -147,55 +160,54 @@ form p {
 
 /* Styles pour la version mobile */
 @media screen and (max-width: 600px) {
-    /* Header styling for mobile will be handled by header.php */
-    
     section {
-        width: 95%;
+        width: 100%;
+        margin-top: 20px;
+        padding: 0 15px;
+        flex: 1; /* Important pour maintenir le footer en bas sur mobile */
         flex-direction: column;
         gap: 30px;
     }
 
     #image_area {
-        width: 70%;
-        margin-bottom: 20px;
+        display: none; /* Cacher l'image desktop */
+    }
+    
+    #mobile_image_area {
+        display: flex !important; /* Afficher l'image mobile */
+        justify-content: center;
+    }
+    
+    #mobile_image {
+        width: 120px;
+        border-radius: 50%;
     }
 
-    .vertical_line {
-        display: none;
-    }
+.vertical_line {
+    display: none;
 
-    #form_area {
-        width: 80%;
-    }
-
-    form {
-        gap: 20px;
-    }
 }
 
-/* Smartphones */
-@media screen and (max-width: 600px) {
-    section {
-        width: 100%;
-        margin-top: 20px;
-        padding: 0 15px;
-    }
-
-    #image_area {
-        display: none;
-    }
+form {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
 
     #form_area {
         width: 100%;
     }
 
     form h1 {
-        font-size: 11pt;
+        font-size: 16pt;
         margin-top: 24px;
     }
 
     #email_area, #password_area {
-        width: 100%;
+        width: 80%;
     }
 
     #email_area label, #password_area label {
@@ -207,7 +219,7 @@ form p {
     }
 
     #checkbox {
-        width: 100%;
+        width: 75%;
         font-size: 12pt;
     }
 
@@ -221,3 +233,4 @@ form p {
         font-size: 12pt;
     }
 }
+

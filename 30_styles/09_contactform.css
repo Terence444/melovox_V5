@@ -258,3 +258,87 @@ form{
     font-family: "Josefin Sans", serif;
     font-size: 14pt;
 }
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+
+section{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+body h3 {
+    font-family: "Josefin Sans", serif;
+    font-size: 18pt;
+    color: white;
+    margin-top: 50px;
+    text-align: center;
+} 
+    
+#image_area{
+    display: none;
+    }
+
+
+.vertical_line{
+    display: none;
+
+}
+
+#contact_form {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 33px;
+}
+
+#instructions h3 {
+    font-family: "Josefin Sans", serif;
+    font-size: 22pt;
+    color: white;
+    margin: 8px;
+}
+
+#instructions p {
+  font-family: "Josefin Sans", serif;
+  font-size: 11pt;
+  color: white;
+}
+
+form {
+  width: 110%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+#user_type_area {
+  width: 100%;
+  font-family: "Josefin Sans", serif;
+  font-size: 17pt;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+  gap: 15px;
+}
+
+#user_type_area label {
+  width: 60%;
+}
+
+#question2 {
+  width: 50%;
+  margin-left: 56px;
+}
+
+}
