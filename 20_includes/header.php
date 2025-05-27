@@ -125,3 +125,6 @@
         </div>
     </div>
 </header>
+
+<!-- INCLURE LA BANNIÈRE DE COOKIES ICI -->
+<?php include '../20_includes/cookie_banner.php'; ?>
