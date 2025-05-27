@@ -39,6 +39,11 @@
             <p>Veuillez renseigner les champs suivants pour nous adresser votre message.</p>
         </div>
 
+        <!-- Image uniquement visible en mobile -->
+        <div id="mobile_image_area" style="display: none;" >
+            <img id="mobile_image"  src="../60_visuels/illustrations/Crowd_concert.jpg" alt="image d'une foule de concert">
+        </div>
+
 
         
         <?php

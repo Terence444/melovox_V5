@@ -16,6 +16,10 @@ unset($_SESSION['email_error'], $_SESSION['pseudo_error'], $_SESSION['form_data'
 
 
 <h3>À votre tour de faire entendre votre voix ! 🎤</h3>
+ <!-- Image uniquement visible en mobile -->
+        <div id="mobile_image_area" style="display: none;" >
+            <img id="mobile_image"  src="../60_visuels/illustrations/your_turn.jpg" alt="Personne vêtue d'une robe blanche avec des accents bleu marine, tenant un microphone vintage et tendant un bras vers l'avant, sur un fond divisé en deux nuances de bleu">
+        </div>
 <section>
 
     <div id="image_area">
@@ -29,6 +33,7 @@ unset($_SESSION['email_error'], $_SESSION['pseudo_error'], $_SESSION['form_data'
             <h3>Créer votre compte</h3>
             <p>Veuillez renseigner les champs pour procéder à la création de votre espace personnel</p>
         </div>
+
 
         <form action="../50_config/config_inscrip.php" method="post" enctype="multipart/form-data" id="inscriptionForm">
             <div id="name_area">

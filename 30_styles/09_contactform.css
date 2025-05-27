@@ -1,9 +1,41 @@
+/* Reset et styles de base */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #ffffff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 /*---------- Section : Formulaire d'inscription------------*/
 body h3{
     font-family: "Josefin Sans", serif;
     font-size: 25pt;
     color: white;
     margin-top: 50px;
+    margin-bottom: 15px;
 }
 
 section{
@@ -12,7 +44,8 @@ section{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 900px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 #image_area{
@@ -24,22 +57,21 @@ section{
 
 #image{
     width: 70%;
+    max-width: 400px;
     border-radius: 50%;
 }
 .vertical_line{
     display: inline-block;
-    border-left: 1px solid #ccc;
-    margin-right: 25px;
-    height: 942px; 
+    border-left: 1px solid #ffffff;
+    height: 600px;
 }
 #contact_form{
-    width: 55%;
-    height: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: 33px;
+    gap: 30px;
 }
 
 #contact_form h3{
@@ -55,29 +87,29 @@ section{
     justify-content: center;
     text-align: center;
     border-radius: 20px;
+    margin-left: 30px
 }
 #instructions h3{
     font-family: "Josefin Sans", serif;
     font-size: 25pt;
     color: white;
-    margin-bottom: -5px;
+    margin: 10px;
 }
 
 #instructions p{
     font-family: "Josefin Sans", serif;
     font-size: 15pt;
     color: white;
+    margin: 16px;
 }
 
 form{
     width: 100%;
-    height: 100%;
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 60px;
-    color: white;
+    gap: 40px;
 
 }
 
@@ -263,11 +295,12 @@ form{
 @media screen and (max-width: 600px) {
 
 section{
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+        padding: 0 15px;
+        flex: 1; /* Important pour maintenir le footer en bas sur mobile */
+        flex-direction: column;
+        gap: 30px;
 }
 
 body h3 {
@@ -282,20 +315,37 @@ body h3 {
     display: none;
     }
 
+#mobile_image_area {
+        display: flex !important; /* Afficher l'image mobile */
+        justify-content: center;
+    }
+    
+    #mobile_image {
+        width: 120px;
+        border-radius: 50%;
+    }
 
 .vertical_line{
     display: none;
 
 }
-
+#instructions{
+    background-color: rgba(125, 116, 116, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    margin: 0;
+}
 #contact_form {
   width: 90%;
-  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 33px;
+  gap: 15px;
 }
 
 #instructions h3 {
