@@ -1,8 +1,10 @@
+
 *{
   a:visited {
     color: #ffffff;
   }
 }
+
 /*---------- Section 1 : Présentation ------------*/
 
 #presentation { 
@@ -312,4 +314,268 @@
     width: 70%;
     height: fit-content;
     margin-left: 20px;
+}
+/* Ajoutez ces règles à la fin de votre fichier 01_index.css */
+
+@media screen and (max-width: 600px) {
+    
+    /*---------- Section 1 : Présentation (Mobile) ------------*/
+    #presentation {
+        height: auto;
+        padding: 20px 10px;
+        margin-top: 50px;
+    }
+
+    #presentation h2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+
+    .symbols {
+        font-size: 20px;
+    }
+
+    .zone_pres {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+        margin-bottom: 30px;
+        padding: 20px 0;
+    }
+
+    .icone_lien {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .icone_lien img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px;
+    }
+
+    .icone_lien a {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .texte_pres {
+        width: 95%;
+        height: auto;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .texte_pres h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .texte_pres p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+}
+
+    /*---------- Section 2 : Artiste du moment (Mobile) ----------*/
+   @media screen and (max-width: 600px) {
+    
+    /*---------- Autres sections restent identiques ----------*/
+    /* ... gardez le reste du code responsive précédent ... */
+
+    /*---------- Section 2 : Artiste du moment (Mobile Amélioré) ----------*/
+    #artiste_moment {
+        width: 95%;
+        height: auto;
+        margin-top: 40px;
+        padding: 20px 10px;
+        min-height: auto;
+    }
+
+    #artiste_moment h2 {
+        font-size: 18px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    /* Carrousel simplifié et plus fluide pour mobile */
+    .carousel-container {
+        max-width: 100%;
+        padding: 20px 0;
+        overflow: hidden;
+    }
+
+    .carousel {
+        height: 220px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .carousel-item {
+        width: 160px;
+        height: 160px;
+        border-width: 6px;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform-origin: center center;
+    }
+
+    /* Simplification des positions pour mobile - seulement 3 éléments visibles */
+    .carousel-item.active-1,
+    .carousel-item.active-5 {
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(0);
+    }
+
+    .carousel-item.active-2 {
+        z-index: 2;
+        opacity: 0.7;
+        transform: scale(0.75) translateX(-120px);
+        left: calc(50% - 80px);
+    }
+
+    .carousel-item.active-3 {
+        z-index: 5;
+        opacity: 1;
+        transform: scale(1) translateX(0);
+        left: calc(50% - 80px);
+    }
+
+    .carousel-item.active-4 {
+        z-index: 2;
+        opacity: 0.7;
+        transform: scale(0.75) translateX(120px);
+        left: calc(50% - 80px);
+    }
+
+    /* Boutons de navigation améliorés */
+    .carousel-nav {
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0 10px;
+    }
+
+    .nav-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+        background-color: rgba(250, 201, 76, 0.9);
+        color: #333;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        transition: all 0.2s ease;
+        backdrop-filter: blur(5px);
+    }
+
+    .nav-btn:hover,
+    .nav-btn:active {
+        background-color: rgba(250, 201, 76, 1);
+        transform: scale(1.05);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Points de navigation plus discrets */
+    .carousel-dots {
+        margin-top: 15px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+        margin: 0 4px;
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: all 0.3s ease;
+    }
+
+    .dot.active {
+        background-color: #fac94c;
+        transform: scale(1.2);
+    }
+
+    /* Optimisation des performances */
+    .carousel-item {
+        will-change: transform, opacity;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+
+
+    /*---------- Section 3 : A propos (Mobile) ----------*/
+    #bg_a_propos {
+        padding: 20px 0;
+    }
+
+    #a_propos {
+        width: 90%;
+        height: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    #a_propos div {
+        width: 95%;
+        margin-left: 0;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    #a_propos h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    #a_propos p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /*---------- Ajustements généraux pour mobile ----------*/
+    
+    /* Cache les éléments du carrousel qui sortent trop sur mobile */
+    .carousel-item.active-1,
+    .carousel-item.active-5 {
+        display: none;
+    }
+
+    /* Améliore la lisibilité des liens */
+    a {
+        min-height: 44px;
+        display: inline-block;
+        padding: 5px;
+    }
+
+    /* Espacement amélioré pour les sections */
+    section {
+        margin-bottom: 20px;
+    }
+}
+/* Ajout de règles pour améliorer les performances sur tous les appareils */
+@media screen and (max-width: 600px) {
+    /* Force l'accélération matérielle */
+    .carousel,
+    .carousel-item {
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+    }
+
+    /* Réduit la complexité des animations pour les appareils moins puissants */
+    @media screen and (max-width: 600px) and (max-resolution: 150dpi) {
+        .carousel-item {
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-item.active-2,
+        .carousel-item.active-4 {
+            transform: scale(0.8) translateX(-100px);
+        }
+        
+        .carousel-item.active-4 {
+            transform: scale(0.8) translateX(100px);
+        }
+    }
 }

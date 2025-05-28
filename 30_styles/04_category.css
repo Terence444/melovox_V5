@@ -128,3 +128,166 @@
     align-items: center;
 }
 
+/* --------- RESPONSIVE DESIGN -------- */
+@media screen and (max-width: 600px) {
+    /* Section Playlist */
+    #playlist {
+        margin-top: 50px;
+        padding: 15px;
+    }
+    
+    #playlist h1 {
+        font-size: 28pt;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    
+    #playlist h3 {
+        width: 100%;
+        font-size: 16pt;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    #playlist_area {
+        width: 100%;
+        gap: 25px;
+        padding: 0 10px;
+    }
+    
+    #playlist_area div {
+        width: calc(50% - 15px);
+        min-width: 130px;
+    }
+    
+    .playlist_icon {
+        width: 100px;
+        height: 100px;
+    }
+    
+    #playlist_area a {
+        font-size: 14pt;
+        text-align: center;
+        word-wrap: break-word;
+        margin-top: 8px;
+    }
+    
+    /* Section Artistes */
+    #artist_albums {
+        padding: 0 15px;
+        margin-top: 30px;
+    }
+    
+    #artist_albums h3 {
+        width: 100%;
+        font-size: 16pt;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    
+    #artist_area {
+        width: 100%;
+        gap: 25px;
+        justify-content: center;
+        padding-top: 10px;
+    }
+    
+    #artist_icon {
+        width: calc(50% - 15px);
+        min-width: 100px;
+        gap: 8px;
+    }
+    
+    #artist_icon img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    #artist_area a {
+        font-size: 14pt;
+        text-align: center;
+        word-wrap: break-word;
+    }
+    
+    /* Section Albums */
+    #albums_area {
+        margin-top: 50px;
+        padding: 15px;
+    }
+    
+    #albums_area h3 {
+        width: 100%;
+        font-size: 16pt;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    
+    #albums_icons_area {
+        width: 100%;
+        gap: 25px;
+        padding: 0 10px;
+    }
+    
+    #albums_icons_area div {
+        width: calc(50% - 15px);
+        min-width: 130px;
+    }
+    
+    #albums_icons_area a {
+        font-size: 14pt;
+        text-align: center;
+        word-wrap: break-word;
+        margin-top: 8px;
+    }
+}
+
+/* Pour les très petits écrans (moins de 400px) */
+@media screen and (max-width: 400px) {
+    #playlist h1 {
+        font-size: 24pt;
+    }
+    
+    #playlist h3,
+    #artist_albums h3,
+    #albums_area h3 {
+        font-size: 14pt;
+    }
+    
+    #playlist_area div,
+    #albums_icons_area div {
+        width: calc(50% - 10px);
+        min-width: 110px;
+    }
+    
+    .playlist_icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    #playlist_area a,
+    #albums_icons_area a,
+    #artist_area a {
+        font-size: 12pt;
+    }
+    
+    #artist_icon {
+        width: calc(50% - 10px);
+        min-width: 90px;
+    }
+    
+    #artist_icon img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    #playlist_area,
+    #albums_icons_area {
+        gap: 15px;
+    }
+    
+    #artist_area {
+        gap: 20px;
+    }
+}

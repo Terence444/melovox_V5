@@ -76,3 +76,182 @@
     flex-direction: column;
     gap: 10px;
 }
+
+/* --------- Section 1-------- */
+#category_button{
+    width: 100%;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;  
+    align-items: center; 
+    margin-top: 100px; 
+    font-family: "Josefin Sans", serif;
+    background-color: rgba(255, 255, 255, 0.18);
+}
+#category_button h2{
+    font-family: "Josefin Sans", serif;
+    font-size: 30pt;
+    color: white; 
+    margin-bottom: 70px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+#buttons {
+    flex-wrap: wrap;
+    gap: 70px;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin-bottom: 50px;
+}  
+.Categorie{
+    width: 210px;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    background-color: #FAC94C;
+    padding: 10px 20px; 
+    font-size: 20px; 
+    cursor: pointer; 
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+/* --------- Section 2-------- */
+#all_artist{
+    width: 90%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;  
+    align-items: center; 
+    margin-top: 50px;
+    font-family: "Josefin Sans", serif;
+}
+#all_artist h2{
+    font-family: "Josefin Sans", serif;
+    font-size: 30pt;
+    color: white; 
+    margin-bottom: 70px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+#artist_area{
+    flex-wrap: wrap;
+    gap: 60px;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+#artist_area a{
+    font-family: "Josefin Sans", serif;
+    font-size: 20pt;
+    color: white;
+    text-decoration: none;
+}
+#artist_icon{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* --------- RESPONSIVE DESIGN -------- */
+@media screen and (max-width: 600px) {
+    /* Section 1 - Catégories */
+    #category_button {
+        margin-top: 50px;
+        padding: 0 15px;
+    }
+    
+    #category_button h2 {
+        font-size: 24pt;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    #buttons {
+        width: 100%;
+        gap: 15px;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    
+    .Categorie {
+        width: 150px;
+        height: 45px;
+        font-size: 16px;
+        padding: 8px 15px;
+        border-radius: 20px;
+    }
+    
+    /* Section 2 - Artistes */
+    #all_artist {
+        width: 100%;
+        margin-top: 30px;
+        padding: 0 15px;
+    }
+    
+    #all_artist h2 {
+        font-size: 24pt;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    #artist_area {
+        width: 100%;
+        gap: 30px;
+        justify-content: center;
+    }
+    
+    #artist_icon {
+        width: calc(50% - 15px);
+        min-width: 120px;
+        gap: 8px;
+    }
+    
+    #artist_icon img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    #artist_area a {
+        font-size: 14pt;
+        text-align: center;
+        word-wrap: break-word;
+    }
+}
+
+/* Pour les très petits écrans (moins de 400px) */
+@media screen and (max-width: 400px) {
+    #category_button h2, 
+    #all_artist h2 {
+        font-size: 20pt;
+    }
+    
+    .Categorie {
+        width: 120px;
+        height: 40px;
+        font-size: 14px;
+    }
+    
+    #artist_icon {
+        width: calc(50% - 10px);
+        min-width: 100px;
+    }
+    
+    #artist_icon img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    #artist_area a {
+        font-size: 12pt;
+    }
+    
+    #buttons {
+        gap: 10px;
+    }
+}
