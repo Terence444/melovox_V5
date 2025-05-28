@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../20_includes/header.css">
     <link rel="stylesheet" href="../20_includes/footer.css">
 
+    <link rel="icon" type="image/png" sizes="32x32" href="../60_visuels/logo/favicon-32x32.png">
+ 
+
     <!-- Programme pour charger chaque feuille de style CSS en fonction du nom des pages -->
     <?php
     // Définir le chemin des fichiers CSS en utilisant une constante
