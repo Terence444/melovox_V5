@@ -25,6 +25,12 @@
     text-align: center;
 }
 
+#playlist_cover > img {
+    width: auto;
+    height: auto;
+    max-width: 300px;
+}
+
 #cover{
 
 }
@@ -112,6 +118,7 @@ height: 80px;
     color: white;
     height: fit-content;
     margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: center;
   }
@@ -157,3 +164,149 @@ height: 80px;
       display: inline-block;
       float: right;
     }
+
+
+/* --------- Responsive Design -------- */
+@media screen and (max-width: 600px) {
+    /* Section playlist_info */
+    #playlist_info {
+        margin-top: 50px;
+        padding: 20px 15px;
+    }
+    
+    #playlist_info h1 {
+        font-size: 28pt;
+        margin-bottom: 20px;
+    }
+    
+    #playlist_cover {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    #playlist_cover > img {
+        width: 200px;
+        height: auto;
+    }
+    
+    #user_name {
+        width: 100%;
+        max-width: 300px;
+        height: 50px;
+    }
+    
+    #artist_icon {
+        width: 40px;
+    }
+    
+    #user_name h6 {
+        font-size: 16pt;
+        margin-left: 10px;
+    }
+    
+    #playlist_cover p {
+        font-size: 14pt;
+        margin: 5px 0;
+    }
+    
+    /* Boutons de contrôle */
+    #button_icons {
+        width: 90%;
+        height: 100px;
+        gap: 15px;
+        margin-right: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .big_buttons {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .small_buttons {
+        width: 50px;
+        height: 50px;
+    }
+    
+    /* Section tracklist */
+    #tracklist {
+        margin-top: 30px;
+        padding: 0 15px;
+        margin-bottom: 30px;
+    }
+    
+    .tracklist {
+        width: 95%;
+        border-radius: 15px;
+    }
+    
+    .tracklist li {
+        padding: 0.8em 0.5em;
+        font-size: 14pt;
+    }
+    
+    .tracklist li .track-name {
+        margin-left: 0.3em;
+        max-width: 60%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    .tracklist li .track-number {
+        width: 1.2em;
+        font-size: 12pt;
+    }
+    
+    .tracklist li .track-duration {
+        font-size: 12pt;
+    }
+  }
+
+/* Version tablette */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    #playlist_info {
+        margin-top: 80px;
+    }
+    
+    #playlist_info h1 {
+        font-size: 30pt;
+    }
+    
+    #playlist_cover {
+        width: 500px;
+    }
+    
+    #user_name {
+        width: 400px;
+    }
+    
+    #user_name h6 {
+        font-size: 18pt;
+    }
+    
+    #playlist_cover p {
+        font-size: 16pt;
+    }
+    
+    #button_icons {
+        width: 60%;
+        gap: 25px;
+    }
+    
+    .big_buttons {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .small_buttons {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .tracklist {
+        width: 80%;
+    }
+    
+  }
